@@ -1,0 +1,75 @@
+/* Poppins Medium */
+@font-face {
+    font-family: 'Poppins';
+    src: url('../assets/fonts/Poppins-Medium.ttf') format('truetype');
+    font-weight: 500;
+    font-style: normal;
+}
+
+/* Poppins Bold */
+@font-face {
+    font-family: 'Poppins';
+    src: url('../assets/fonts/Poppins-Bold.ttf') format('truetype');
+    font-weight: 700;
+    font-style: normal;
+}
+
+/* Helvetica Neue */
+@font-face {
+    font-family: 'HelveticaNeue';
+    src: url('../assets/fonts/HelveticaNeue.ttc') format('truetype');
+    font-weight: 400;
+    font-style: normal;
+}
+
+/* Druk Wide Bold */
+@font-face {
+    font-family: 'DrukWide';
+    src: url('../assets/fonts/Druk Wide Bold.otf') format('opentype');
+    font-weight: 700;
+    font-style: normal;
+}
+
+/* Basica */
+@font-face {
+    font-family: 'Basica';
+    src: url('../assets/fonts/Basica solo letras para dafont lista__.ttf') format('truetype');
+    font-weight: 400;
+    font-style: normal;
+}
+
+* {
+    font-family: 'Poppins', sans-serif;
+}
+
+.light-text {
+    font-weight: 100;
+}
+
+.bold-text {
+    font-weight: 800;
+}
+
+.slider-title {
+    font-size: 22px;
+    font-weight: 800;
+}
+
+.footer-item-description {
+    color: #b8b8b8 !important;
+}
+
+.logo-text {
+    font-family: 'DrukWide';
+    font-size: 68px;
+    line-height: 52px;
+}
+
+.logo-desc {
+    font-family: 'Basica';
+    color: #fff;
+    padding: 0 20px;
+}
+
+
+

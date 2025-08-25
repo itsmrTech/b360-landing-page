@@ -1,0 +1,240 @@
+Package Report
+
+-----------------------------------------------------------------------------
+Document:
+Name: b360_web_v3b.ai
+Color Mode: RGB color
+Color Profile: sRGB IEC61966-2.1
+Ruler Units: pixels
+Artboard Dimensions: 1920 px x 1080 px
+Show Images in Outline Mode: OFF
+Highlight Substituted Fonts: OFF
+Highlight Substituted Glyphs: OFF
+Preserve Text Editability
+Simulate Colored Paper: OFF
+
+-----------------------------------------------------------------------------
+Spot Color Objects:
+
+-----------------------------------------------------------------------------
+Missing Fonts:NONE
+
+-----------------------------------------------------------------------------
+Protected Fonts that were not packaged:NONE
+
+-----------------------------------------------------------------------------
+Fonts:
+Helvetica Neue Bold (TrueType)
+Basica 2.0 (TrueType)
+Poppins Medium (TrueType)
+Poppins Bold (TrueType)
+Druk Wide Bold (OTF)
+Helvetica Neue (TrueType)
+
+-----------------------------------------------------------------------------
+Embedded Fonts:
+NONE
+
+-----------------------------------------------------------------------------
+Missing Links:
+NONE
+
+-----------------------------------------------------------------------------
+Linked Images:
+
+/Users/danielvyskoc/Library/Mobile Documents/iCloud Drive/LINEAR WAVE & CO/FUGU CHEFS/ACTIVE_CLIENTS/B360/VISUAL_IDENTITY/mood_photos/08bb8524273829dc88931bb1df23ea0f.jpg
+Type: Grayscale
+Bits per Pixel: 8
+Channels: 1
+Size: 940K, 736 by 1308 pixels
+Dimensions: 296.204 by 522.906 points 
+Resolution: 178.904 by 180.101 pixels per inch
+
+
+/Users/danielvyskoc/Library/Mobile Documents/iCloud Drive/LINEAR WAVE & CO/FUGU CHEFS/ACTIVE_CLIENTS/B360/VISUAL_IDENTITY/mood_photos/e517662ed310c785cdb46bf856ec7842.jpg
+Type: RGB
+Bits per Pixel: 24
+Channels: 3
+Size: 1939K, 662 by 1000 pixels
+Dimensions: 298.15 by 450.378 points 
+Resolution: 159.866 by 159.866 pixels per inch
+
+
+/Users/danielvyskoc/Library/Mobile Documents/iCloud Drive/LINEAR WAVE & CO/FUGU CHEFS/ACTIVE_CLIENTS/B360/VISUAL_IDENTITY/mood_photos/4ef3dddc59a464bd741ba945203b8e27.jpg
+Type: RGB
+Bits per Pixel: 24
+Channels: 3
+Size: 2641K, 736 by 1225 pixels
+Dimensions: 299.242 by 576.158 points 
+Resolution: 177.087 by 153.083 pixels per inch
+
+
+/Users/danielvyskoc/Library/Mobile Documents/iCloud Drive/LINEAR WAVE & CO/FUGU CHEFS/ACTIVE_CLIENTS/B360/VISUAL_IDENTITY/mood_photos/cd095645595e58afe72ceb3b91225d6b.jpg
+Type: RGB
+Bits per Pixel: 24
+Channels: 3
+Size: 2115K, 736 by 981 pixels
+Dimensions: 330.979 by 445.127 points 
+Resolution: 160.107 by 158.678 pixels per inch
+
+
+/Users/danielvyskoc/Library/Mobile Documents/iCloud Drive/LINEAR WAVE & CO/FUGU CHEFS/ACTIVE_CLIENTS/B360/VISUAL_IDENTITY/mood_photos/08bb8524273829dc88931bb1df23ea0f.jpg
+Type: Grayscale
+Bits per Pixel: 8
+Channels: 1
+Size: 940K, 736 by 1308 pixels
+Dimensions: 296.204 by 522.906 points 
+Resolution: 178.904 by 180.101 pixels per inch
+
+
+/Users/danielvyskoc/Library/Mobile Documents/iCloud Drive/LINEAR WAVE & CO/FUGU CHEFS/ACTIVE_CLIENTS/B360/VISUAL_IDENTITY/mood_photos/e517662ed310c785cdb46bf856ec7842.jpg
+Type: RGB
+Bits per Pixel: 24
+Channels: 3
+Size: 1939K, 662 by 1000 pixels
+Dimensions: 298.15 by 450.378 points 
+Resolution: 159.866 by 159.866 pixels per inch
+
+
+/Users/danielvyskoc/Library/Mobile Documents/iCloud Drive/LINEAR WAVE & CO/FUGU CHEFS/ACTIVE_CLIENTS/B360/VISUAL_IDENTITY/mood_photos/4ef3dddc59a464bd741ba945203b8e27.jpg
+Type: RGB
+Bits per Pixel: 24
+Channels: 3
+Size: 2641K, 736 by 1225 pixels
+Dimensions: 299.242 by 576.158 points 
+Resolution: 177.087 by 153.083 pixels per inch
+
+
+/Users/danielvyskoc/Library/Mobile Documents/iCloud Drive/LINEAR WAVE & CO/FUGU CHEFS/ACTIVE_CLIENTS/B360/VISUAL_IDENTITY/mood_photos/cd095645595e58afe72ceb3b91225d6b.jpg
+Type: RGB
+Bits per Pixel: 24
+Channels: 3
+Size: 2115K, 736 by 981 pixels
+Dimensions: 330.979 by 445.127 points 
+Resolution: 160.107 by 158.678 pixels per inch
+
+
+/Users/danielvyskoc/Desktop/Screenshot 2025-08-05 at 9.10.23?AM
+Type: Transparent RGB
+Bits per Pixel: 32
+Channels: 4
+Size: 4174K, 1190 by 898 pixels
+Dimensions: 1919.042 by 1219.088 points 
+Resolution: 44.647 by 53.036 pixels per inch
+
+
+/Users/danielvyskoc/Desktop/Screenshot 2025-08-05 at 9.10.23?AM
+Type: Transparent RGB
+Bits per Pixel: 32
+Channels: 4
+Size: 4174K, 1190 by 898 pixels
+Dimensions: 1919.042 by 1219.088 points 
+Resolution: 44.647 by 53.036 pixels per inch
+
+
+/Users/danielvyskoc/Library/Mobile Documents/iCloud Drive/LINEAR WAVE & CO/FUGU CHEFS/ACTIVE_CLIENTS/B360/VISUAL_IDENTITY/mood_photos/a7836337aea71756879117692a2f4ade.jpg
+Type: Grayscale
+Bits per Pixel: 8
+Channels: 1
+Size: 328K, 580 by 580 pixels
+Dimensions: 485.522 by 489.628 points 
+Resolution: 86.011 by 85.289 pixels per inch
+
+
+/Users/danielvyskoc/Library/Mobile Documents/iCloud Drive/LINEAR WAVE & CO/FUGU CHEFS/ACTIVE_CLIENTS/B360/VISUAL_IDENTITY/mood_photos/e517662ed310c785cdb46bf856ec7842.jpg
+Type: RGB
+Bits per Pixel: 24
+Channels: 3
+Size: 1939K, 662 by 1000 pixels
+Dimensions: 379.023 by 577.384 points 
+Resolution: 125.755 by 124.7 pixels per inch
+
+
+/Users/danielvyskoc/Library/Mobile Documents/iCloud Drive/LINEAR WAVE & CO/FUGU CHEFS/ACTIVE_CLIENTS/B360/VISUAL_IDENTITY/mood_photos/27d81557b80bc87df54b16d410c48e9e.jpg
+Type: RGB
+Bits per Pixel: 24
+Channels: 3
+Size: 1983K, 736 by 920 pixels
+Dimensions: 428.936 by 540.704 points 
+Resolution: 123.543 by 122.507 pixels per inch
+
+
+/Users/danielvyskoc/Library/Mobile Documents/iCloud Drive/LINEAR WAVE & CO/FUGU CHEFS/ACTIVE_CLIENTS/B360/VISUAL_IDENTITY/mood_photos/f3414d118b0f94e824312e3201ca5b75.jpg
+Type: RGB
+Bits per Pixel: 24
+Channels: 3
+Size: 1983K, 736 by 920 pixels
+Dimensions: 580.882 by 733.236 points 
+Resolution: 91.227 by 90.339 pixels per inch
+
+
+/Users/danielvyskoc/Library/Mobile Documents/iCloud Drive/LINEAR WAVE & CO/FUGU CHEFS/ACTIVE_CLIENTS/B360/VISUAL_IDENTITY/mood_photos/08bb8524273829dc88931bb1df23ea0f.jpg
+Type: Grayscale
+Bits per Pixel: 8
+Channels: 1
+Size: 940K, 736 by 1308 pixels
+Dimensions: 289.969 by 511.898 points 
+Resolution: 182.751 by 183.974 pixels per inch
+
+
+/Users/danielvyskoc/Library/Mobile Documents/iCloud Drive/LINEAR WAVE & CO/FUGU CHEFS/ACTIVE_CLIENTS/B360/VISUAL_IDENTITY/mood_photos/08bb8524273829dc88931bb1df23ea0f.jpg
+Type: Grayscale
+Bits per Pixel: 8
+Channels: 1
+Size: 940K, 736 by 1308 pixels
+Dimensions: 289.969 by 511.898 points 
+Resolution: 182.751 by 183.974 pixels per inch
+
+
+/Users/danielvyskoc/Library/Mobile Documents/iCloud Drive/LINEAR WAVE & CO/FUGU CHEFS/ACTIVE_CLIENTS/B360/VISUAL_IDENTITY/mood_photos/d41e0ee65ff5343e57a32e85dfa5a7de.jpg
+Type: RGB
+Bits per Pixel: 24
+Channels: 3
+Size: 2049K, 683 by 1024 pixels
+Dimensions: 605.813 by 889.504 points 
+Resolution: 81.174 by 82.887 pixels per inch
+
+
+/Users/danielvyskoc/Library/Mobile Documents/iCloud Drive/LINEAR WAVE & CO/FUGU CHEFS/ACTIVE_CLIENTS/B360/VISUAL_IDENTITY/mood_photos/652de011390a7d20089ce86a7be9cf51.jpg
+Type: RGB
+Bits per Pixel: 24
+Channels: 3
+Size: 1293K, 549 by 804 pixels
+Dimensions: 577.115 by 888.669 points 
+Resolution: 68.492 by 65.14 pixels per inch
+
+
+/Users/danielvyskoc/Library/Mobile Documents/iCloud Drive/LINEAR WAVE & CO/FUGU CHEFS/PAST_CLIENTS/IBAHOUSE/2025/new_images/arch/1_1.jpeg
+Type: RGB
+Bits per Pixel: 24
+Channels: 3
+Size: 106077K, 8023 by 4513 pixels
+Dimensions: 2048.943 by 1152.546 points 
+Resolution: 281.929 by 281.929 pixels per inch
+
+
+/Users/danielvyskoc/Desktop/Screenshot 2025-08-05 at 9.10.23?AM
+Type: Transparent RGB
+Bits per Pixel: 32
+Channels: 4
+Size: 4174K, 1190 by 898 pixels
+Dimensions: 1919.042 by 1219.088 points 
+Resolution: 44.647 by 53.036 pixels per inch
+
+
+/Users/danielvyskoc/Library/Mobile Documents/iCloud Drive/LINEAR WAVE & CO/FUGU CHEFS/ACTIVE_CLIENTS/B360/VISUAL_IDENTITY/mood_photos/30269d4c140af61ac19f839a06d55205.jpg
+Type: RGB
+Bits per Pixel: 24
+Channels: 3
+Size: 800K, 427 by 640 pixels
+Dimensions: 789.099 by 890.709 points 
+Resolution: 38.961 by 51.734 pixels per inch
+
+
+/Users/danielvyskoc/Desktop/Screenshot 2025-08-05 at 9.10.05?AM
+Type: Transparent RGB
+Bits per Pixel: 32
+Channels: 4
+Size: 4048K, 1154 by 898 pixels
+Dimensions: 1910.51 by 1486.688 points 
+Resolution: 43.49 by 43.49 pixels per inch
