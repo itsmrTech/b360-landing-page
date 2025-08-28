@@ -11,6 +11,34 @@ const whyUsSlider = new Swiper(".whyUsSlider", {
         clickable: true
     }
 });
+
+const headerSlider = new Swiper(".header-slider", {
+    loop: false,
+    slidesPerView: 1, // حالت پیش‌فرض
+    spaceBetween: 10,
+    breakpoints: {
+        640: { // وقتی عرض >= 640px باشه
+            slidesPerView: 2,
+            spaceBetween: 20,
+        },
+        1024: { // وقتی عرض >= 1024px باشه
+            slidesPerView: 3,
+            spaceBetween: 30,
+        },
+        1440: { // وقتی عرض >= 1440px باشه
+            slidesPerView: 4,
+            spaceBetween: 40,
+        },
+    },
+    observer: true,
+    observeParents: true,
+    watchOverflow: true,
+    pagination: {
+        el: ".swiper-pagination",
+        clickable: true
+    }
+});
+
 const footerPortfolioSlider = new Swiper(".footer-portfolio-slider", {
     loop: false,
     slidesPerView: 1,
@@ -57,7 +85,7 @@ function endLoadingAnimationHandler(){
     if(mainContent){
         setTimeout(() => {
             mainContent.classList.remove('d-none');
-        } , 450)
+        } , 950)
         setTimeout(() => {
             loadingWrapper.classList.add('fade-out');
         } , 750)
@@ -123,13 +151,14 @@ window.addEventListener('load', () => {
 
 // Observer برای سکشن‌ها
 
+const HEADER_SLIDER_SECTION_INDEX = 0;
 const WHY_US_SLIDER_SECTION_INDEX = 1;
 const FOOTER_PORTFOLIO_SLIDER_SECTION_INDEX = 2;
 const FOOTER_SERVICES_SLIDER_SECTION_INDEX = 3
 //  توی بخش دوم یک اسلایدر "why us" داریم که شماره ایندکسش 2 هست و سایر بخش ها هم نوشته شده
 
-const LOADING_TIME = 2000;
-// مثلا بعد 2 ثانیه لود تکمیل میشه
+const LOADING_TIME = 3000;
+// مثلا بعد 3 ثانیه لود تکمیل میشه
 
 function sliderScrollHandler(SLIDER, DIR){
     if((DIR === 'next' && SLIDER.isEnd) || (DIR === 'prev' && SLIDER.isBeginning)){
@@ -160,7 +189,9 @@ setTimeout(() => {
         tolerance: 8,
         preventDefault: true,
         onDown: () => {
-            if(current === WHY_US_SLIDER_SECTION_INDEX)
+            if(current === HEADER_SLIDER_SECTION_INDEX)
+                sliderScrollHandler(headerSlider, 'next')
+            else if(current === WHY_US_SLIDER_SECTION_INDEX)
                 sliderScrollHandler(whyUsSlider, 'next')
             else if(current === FOOTER_PORTFOLIO_SLIDER_SECTION_INDEX)
                 sliderScrollHandler(footerPortfolioSlider, 'next')
@@ -170,7 +201,9 @@ setTimeout(() => {
                 goToSection(current + 1);
         },
         onUp: () => {
-            if(current === WHY_US_SLIDER_SECTION_INDEX)
+            if(current === HEADER_SLIDER_SECTION_INDEX)
+                sliderScrollHandler(headerSlider, 'prev')
+            else if(current === WHY_US_SLIDER_SECTION_INDEX)
                 sliderScrollHandler(whyUsSlider, 'prev')
             else if(current === FOOTER_PORTFOLIO_SLIDER_SECTION_INDEX)
                 sliderScrollHandler(footerPortfolioSlider, 'prev')
@@ -183,6 +216,23 @@ setTimeout(() => {
 } , LOADING_TIME)
 
 // GSAP End !!
+
+
+// Menu Handler
+const menuWrapper = document.querySelector('#menu-wrapper');
+const menuButton = document.querySelector('#menu-button');
+const closeMenuButton = document.querySelector('#close-menu-button');
+
+
+menuButton.addEventListener('click' , () => {
+    menuWrapper.classList.add('active')
+})
+
+closeMenuButton.addEventListener('click' , () => {
+    menuWrapper.classList.remove('active')
+})
+
+
 
 
 

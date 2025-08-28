@@ -12,18 +12,21 @@ main {
     display: flex;
     flex-direction: column;
     .line {
-        width: 70px;
-        height: 6px;
+        width: 4.5vw;
+        height: 0.5vw;
         background: #fff;
-        margin-bottom: 5px;
+        margin-bottom: 0.4vw;
     }
+    cursor: pointer;
+}
+
+.logo-desc {
+    font-size: 2vw;
 }
 
 .logo-text-box {
     position: relative;
     .logo-shape {
-        width: 220px;
-        height: 260px;
         position: relative;
 
         span {
@@ -60,13 +63,19 @@ main {
     .logo-description {
         position: absolute;
         top: 0;
-        left: 0;
-        padding: 80px 66px;
+        padding: 23% 15%;
+        overflow: hidden;
+        width: 80%;
+        height: 80%;
+        margin: 0 auto;
+        left: 50%;
+        transform: translateX(-50%);
+
         p {
-            font-size: 12px;
+            font-size: 0.8vw;
         }
         .bold-text {
-            font-size: 15px;
+            font-size: 1.2vw;
         }
     }
 
@@ -79,8 +88,14 @@ header {
     padding: 40px;
     height: 100dvh;
 
+    .top-header-box {
+        align-items: flex-start;
+    }
+
     .logo-text {
         color: #fff;
+        font-size: 4vw;
+        line-height: 3.7vw;
     }
 
 }
@@ -97,12 +112,12 @@ header {
         flex-direction: column;
         justify-content: flex-start;
         align-items: flex-start;
-        padding: 24px;
+        width: 100%;
 
         p {
             color: #fff;
             font-weight: 200;
-            font-size: clamp(0.5em, 2vw, 1em);
+            font-size: 1.2vw;
             margin: 1.2em 0;
             white-space: nowrap;
         }
@@ -111,7 +126,7 @@ header {
             width: 70%;
         }
         button {
-            font-size: clamp(0.5em, 2vw, 1em);
+            font-size: 1.2vw;
             margin: 1.2em 0;
             white-space: nowrap;
         }
@@ -120,7 +135,7 @@ header {
 
     .image-wrapper:nth-child(2) {
         position: relative;
-        top: 80px;
+        top: 38px;
     }
 
     .image-wrapper:nth-child(3) {
@@ -128,6 +143,49 @@ header {
         top: -70px;
     }
 
+}
+
+.menu-wrapper {
+    position: fixed;
+    right: 0;
+    width: 0%;
+    height: 100dvh;
+    background: #fff;
+    z-index: 2;
+    display: flex;
+    flex-direction: column;
+    transition: 0.5s;
+    align-items: center;
+    overflow: hidden;
+
+    .line-wrapper-shape {
+        width: 100%;
+        display: flex;
+        align-items: flex-end;
+        padding: 45px;
+        .line {
+            background: #000;
+        }
+    }
+
+    .menu-content-wrapper {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-end;
+        padding: 100px 0;
+    }
+
+    a {
+        font-size: 1.2vw;
+        text-decoration: none;
+        color: #000;
+        font-weight: 800;
+    }
+
+}
+
+.menu-wrapper.active {
+    width: 30%;
 }
 
 /* End Header */
@@ -138,12 +196,16 @@ header {
 .slider-wrapper {
     padding: 40px;
 
+    .swiper {
+        height: calc(100% - 82px);
+    }
+
     .slider-box {
         padding-right: 60px;
     }
 
     .swiper-pagination {
-        top: 50%;
+        top: 35%;
         right: 60px;
         width: max-content !important;
         left: unset;
@@ -152,8 +214,8 @@ header {
 
     .swiper-pagination-bullet {
         background: #9e9e9e;
-        width: 18px;
-        height: 18px;
+        width: 1.2vw;
+        height: 1.2vw;
         border-radius: 0;
     }
 
@@ -166,7 +228,20 @@ header {
     }
 
     img {
-        max-height: 550px;
+        max-height: 70%;
+        width: 100%;
+        object-fit: cover;
+    }
+
+    .slider-content {
+        .slider-title {
+            font-size: 2vw;
+        }
+        .slider-content-text-box {
+            p {
+                font-size: 1vw;
+            }
+        }
     }
 
 }
@@ -175,6 +250,12 @@ header {
 
 
 /* Start Footer */
+
+.slider-footer-text {
+    span {
+        font-size: 1.2vw;
+    }
+}
 
 footer {
 
@@ -189,8 +270,8 @@ footer {
     .swiper-pagination-bullet {
         background: transparent !important;
         border: 3px solid #e4e4e4;
-        width: 14px;
-        height: 14px;
+        width: 2vw;
+        height: 2vw;
     }
 
     .swiper-pagination-bullet-active {
@@ -199,7 +280,7 @@ footer {
 
     .footer-slider-box {
         width: 100%;
-        height: calc(100% - 120px);
+        height: 83%;
 
         img {
             width: 100%;
@@ -236,11 +317,11 @@ footer {
         }
 
         .very-big-text {
-            font-size: 34px;
+            font-size: 2.2vw;
         }
 
         .very-small-text {
-            font-size: 12px;
+            font-size: 1vw;
         }
     }
 
@@ -249,8 +330,10 @@ footer {
     }
 
     .footer-img-wrapper {
+        height: 60%;
         img {
-            max-height: 360px;
+            height: 100%;
+            width: 100%;
         }
     }
 
@@ -259,8 +342,8 @@ footer {
             position: absolute;
             top: 50px;
             left: 70px;
-            font-size: 48px;
-            line-height: 48px;
+            font-size: 5vw;
+            line-height: 8vw;
             width: 100%;
             word-spacing: 50px;
             font-weight: 100;
@@ -268,16 +351,31 @@ footer {
         }
     }
 
+    .footer-items-box.part-one {
+        .bold-text {
+            font-size: 1.7vw;
+        }
+        .light-text {
+            font-size: 1.1vw;
+        }
+    }
 
     /* Start Contact */
 
+    .contact-wrapper > div:nth-child(1){
+        height: 100%;
+    }
+
     .contact-wrapper {
         background: #fff;
-        padding: 100px 30px;
+        padding: 3.5vw 1.5vw;
         position: relative;
 
         img {
-            max-height: 530px;
+            object-fit: cover;
+            padding: 1.8vw;
+            height: 95%;
+            width: 95%;
         }
 
         .label-contact-text {
@@ -286,7 +384,7 @@ footer {
             top: 30px;
             color: #000;
             font-weight: 900;
-            font-size: 20px;
+            font-size: 1.8vw;
         }
 
         .bold-text {
@@ -324,14 +422,20 @@ footer {
                 color: #000;
                 text-decoration: none;
                 padding: 0 8px;
-                line-height: 16px;
+                line-height: 1.1vw;
                 border-right: 1px solid #000;
+                font-size: 1.1vw;
             }
 
         }
 
         .footer-links-wrapper a:last-child {
             border: none !important;
+        }
+
+
+        .copy-right-text {
+            font-size: 1.1vw;
         }
 
     }
@@ -343,15 +447,15 @@ footer {
         color: #fff;
 
         .footer-box-title {
-            font-size: 22px;
+            font-size: 1.7vw;
         }
 
         .footer-box-title:nth-child(2) {
-            font-size: 18px;
+            font-size: 1.3vw
         }
 
         .footer-box-title:nth-child(3) {
-            font-size: 16px;
+            font-size: 1vw;
             font-weight: 400;
             color: #bdbdbd;
         }
@@ -363,6 +467,15 @@ footer {
         padding: 30px;
         display: flex;
         justify-content: space-between;
+    }
+
+    .contact-form-wrapper {
+        font-size: 1.2vw;
+
+        .bold-text {
+            font-size: 1.8vw;
+        }
+
     }
 
 }
@@ -402,7 +515,7 @@ footer {
 
     .main-loading-text {
         color: #ababab;
-        font-size: 4em;
+        font-size: 6vw;
         justify-content: center;
         white-space: nowrap;
         text-align: center;
