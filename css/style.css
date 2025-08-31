@@ -606,6 +606,245 @@ footer {
 
 .fullscreen-section {
     height: 100dvh;
+    position: relative;
+    overflow: hidden;
+}
+
+/* Parallax element styling */
+.parallax {
+    will-change: transform;
+    transform-style: preserve-3d;
+}
+
+/* Ensure proper layering for book-like effect */
+.fullscreen-section:nth-child(2) { z-index: 2; }
+.fullscreen-section:nth-child(3) { z-index: 3; }
+.fullscreen-section:nth-child(4) { z-index: 4; }
+.fullscreen-section:nth-child(5) { z-index: 5; }
+
+/* Smooth transitions for all animated elements */
+.fullscreen-section * {
+    transition: transform 0.1s ease-out;
+}
+
+/* Optimize performance for animations */
+.fullscreen-section img,
+.fullscreen-section .swiper-container {
+    will-change: transform;
+    backface-visibility: hidden;
+}
+
+/* Smooth scrolling and performance optimization */
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    overflow-x: hidden;
+}
+
+/* Performance optimizations for GSAP animations */
+.fullscreen-section * {
+    transform: translateZ(0);
+    -webkit-transform: translateZ(0);
+}
+
+/* Ensure proper stacking context for z-index to work */
+.fullscreen-section {
+    transform: translateZ(0);
+    -webkit-transform: translateZ(0);
+}
+
+/* Enhanced animation effects */
+.parallax {
+    transition: transform 0.3s ease-out;
+}
+
+.parallax:hover {
+    transform: scale(1.02);
+}
+
+/* Header block parallax enhancements */
+.header-block-1,
+.header-block-2,
+.header-block-3,
+.header-block-4 {
+    position: relative;
+    transform-style: preserve-3d;
+    will-change: transform;
+    transition: transform 0.1s ease-out;
+    backface-visibility: hidden;
+}
+
+/* Different depths for each block to enhance parallax visibility */
+.header-block-1 { z-index: 1; }
+.header-block-2 { z-index: 2; }
+.header-block-3 { z-index: 3; }
+.header-block-4 { z-index: 4; }
+
+/* Enhanced hover effects for header blocks */
+.header-block-1:hover,
+.header-block-2:hover,
+.header-block-3:hover,
+.header-block-4:hover {
+    transform: scale(1.05) translateZ(20px);
+    box-shadow: 0 20px 40px rgba(0,0,0,0.3);
+}
+
+/* Subtle shadow effect to enhance depth perception */
+.header-block-1::after,
+.header-block-2::after,
+.header-block-3::after,
+.header-block-4::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(45deg, rgba(0,0,0,0.1) 0%, rgba(0,0,0,0) 100%);
+    pointer-events: none;
+    opacity: 0;
+    transition: opacity 0.3s ease-out;
+    z-index: 1;
+}
+
+.header-block-1:hover::after,
+.header-block-2:hover::after,
+.header-block-3:hover::after,
+.header-block-4:hover::after {
+    opacity: 1;
+}
+
+/* Additional visual enhancements for parallax visibility */
+.header-block-1 img,
+.header-block-2 img,
+.header-block-3 img,
+.header-block-4 img {
+    transition: filter 0.3s ease-out;
+    filter: brightness(1) contrast(1);
+}
+
+.header-block-1:hover img,
+.header-block-2:hover img,
+.header-block-3:hover img,
+.header-block-4:hover img {
+    filter: brightness(1.1) contrast(1.1);
+}
+
+/* Text enhancement for better visibility during parallax */
+.header-block-1 p,
+.header-block-2 p,
+.header-block-3 p,
+.header-block-4 p {
+    position: relative;
+    z-index: 2;
+    text-shadow: 0 2px 4px rgba(0,0,0,0.8);
+    transition: text-shadow 0.3s ease-out;
+}
+
+.header-block-1:hover p,
+.header-block-2:hover p,
+.header-block-3:hover p,
+.header-block-4:hover p {
+    text-shadow: 0 4px 8px rgba(0,0,0,1);
+}
+
+/* Dramatic entrance animation for header blocks */
+@keyframes headerBlockEntrance {
+    0% {
+        opacity: 0;
+        transform: translateY(50px) scale(0.8);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+}
+
+.header-block-1,
+.header-block-2,
+.header-block-3,
+.header-block-4 {
+    animation: headerBlockEntrance 0.8s ease-out forwards;
+    animation-delay: calc(var(--block-index, 0) * 0.2s);
+}
+
+/* Set animation delays for staggered entrance */
+.header-block-1 { --block-index: 0; }
+.header-block-2 { --block-index: 1; }
+.header-block-3 { --block-index: 2; }
+.header-block-4 { --block-index: 3; }
+
+/* Enhanced 3D perspective for better parallax visibility */
+.fullscreen-section.panel-1 {
+    perspective: 1000px;
+    perspective-origin: center center;
+}
+
+/* Add subtle border glow effect to enhance depth perception */
+.header-block-1,
+.header-block-2,
+.header-block-3,
+.header-block-4 {
+    border: 1px solid transparent;
+    transition: border-color 0.3s ease-out, box-shadow 0.3s ease-out;
+}
+
+.header-block-1:hover,
+.header-block-2:hover,
+.header-block-3:hover,
+.header-block-4:hover {
+    border-color: rgba(255,255,255,0.3);
+    box-shadow: 
+        0 20px 40px rgba(0,0,0,0.3),
+        0 0 20px rgba(255,255,255,0.1);
+}
+
+/* Smooth fade-in animations for text elements */
+.fullscreen-section h1,
+.fullscreen-section h2,
+.fullscreen-section h3,
+.fullscreen-section p,
+.fullscreen-section .bold-text,
+.fullscreen-section .light-text {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+}
+
+.fullscreen-section h1.animate-in,
+.fullscreen-section h2.animate-in,
+.fullscreen-section h3.animate-in,
+.fullscreen-section p.animate-in,
+.fullscreen-section .bold-text.animate-in,
+.fullscreen-section .light-text.animate-in {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Book-like overlay effect enhancement */
+.fullscreen-section {
+    position: relative;
+    transform-style: preserve-3d;
+}
+
+.fullscreen-section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(45deg, rgba(0,0,0,0.1) 0%, rgba(0,0,0,0) 100%);
+    pointer-events: none;
+    opacity: 0;
+    transition: opacity 0.5s ease-out;
+    z-index: 1;
+}
+
+.fullscreen-section:hover::before {
+    opacity: 1;
 }
 
 /* End Global */
