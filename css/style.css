@@ -303,10 +303,6 @@ footer {
         position: relative;
     }
 
-    .swiper,.swiper-slide {
-        height: 100%;
-    }
-
     .footer-content-slider-box > div {
         padding: 50px;
     }
@@ -595,7 +591,7 @@ footer {
     outline: none !important;
 }
 
-.swiper-container, .swiper-wrapper, .swiper-slide {
+.swiper-container, .swiper-wrapper {
     width: 100%;
     height: 100%;
 }
@@ -604,7 +600,7 @@ footer {
 }
 
 .fullscreen-section {
-    height: 100dvh;
+    height: 103dvh;
 }
 
 /* End Global */
