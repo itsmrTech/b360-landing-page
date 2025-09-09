@@ -5,6 +5,35 @@
         padding-top: 40px;
     }
 
+    .menu-wrapper.active {
+        width: 80% !important;
+    }
+
+    .menu-content-wrapper {
+        a {
+            font-size: 18px !important;
+        }
+    }
+
+    .line-wrapper-shape {
+        .line {
+            width: 60px;
+            height: 6px;
+            margin-bottom: 6px;
+        }
+
+    }
+
+    .menu-wrapper {
+        .line-wrapper-shape {
+            padding: 24px !important;
+        }
+    }
+
+    .menu-content-wrapper {
+        padding: 30px 0 !important;
+    }
+
     header {
         .logo-text {
             font-size: 32px;
@@ -13,13 +42,26 @@
         .logo-desc {
             font-size: 14px ;
         }
-        .line-wrapper-shape {
-            display: none;
+
+        .top-header-box {
+            padding-bottom: 15px !important;
+        }
+
+        .logo-desc {
+            font-size: 12px;
         }
 
         .image-wrapper {
             top: unset !important;
             padding: 10px 0;
+
+            button {
+                font-size: 16px !important;
+            }
+
+            p {
+                font-size: 16px !important;
+            }
 
             img {
                 width: 100%;
@@ -35,12 +77,8 @@
         padding: 0 !important;
     }
 
-    .logo-shape {
-        width: 220px !important;
-    }
-
     .logo-description {
-        width: 220px;
+        width: 140px;
     }
 
     section {
@@ -76,6 +114,150 @@
             padding-bottom: 4px !important;
             line-height: 30px;
         }
+    }
+
+    .loading-text-box {
+        width: 20% !important;
+    }
+
+    header {
+        .swiper-wrapper {
+            flex-wrap: wrap;
+        }
+    }
+
+    .slider-wrapper {
+        padding: 20px !important;
+    }
+
+    .slider-wrapper {
+        .slider-content {
+            .slider-title {
+                font-size: 14px;
+            }
+            .slider-content-text-box {
+                p {
+                    font-size: 12px;
+                    margin-bottom: 3px;
+                }
+            }
+        }
+    }
+
+    header {
+        padding: 20px !important;
+    }
+
+    .header-content {
+        padding: 0 !important;
+    }
+
+    .whyUsSlider {
+        height: calc(100% - 60px) !important;
+
+        .slider-box {
+            padding-bottom: 0 !important;
+        }
+
+        .logo-text-box {
+            width: 145px;
+        }
+
+        .logo-shape {
+            width: 140px !important;
+        }
+
+        .logo-description {
+            p {
+                margin: 0 !important;
+                font-size: 10px;
+            }
+            p.bold-text {
+                font-size: 12px !important;
+            }
+        }
+
+        .why-us-slide {
+            height: 100%;
+
+            .slider-box {
+                height: 100%;
+            }
+
+            .slider-img {
+                height: 35%;
+                margin: 10px 0;
+                img {
+                    height: 100%;
+                    max-height: unset;
+                }
+            }
+
+        }
+
+    }
+
+    .slider-footer-text {
+        * {
+            font-size: 10px !important;
+        }
+    }
+
+    .footer-box-title {
+        font-size: 14px !important;
+        p {
+            margin-bottom: 0;
+        }
+    }
+
+    .footer-box-title:nth-child(2) {
+        font-size: 12px !important;
+    }
+
+    .footer-box-title:nth-child(3) {
+        font-size: 10px !important;
+    }
+
+    .footer-items-box {
+        .bold-text {
+            font-size: 18px !important;
+        }
+        .light-text {
+            font-size: 10px !important;
+        }
+    }
+
+    .footer-content-slider-box {
+        padding: 20px !important;
+    }
+
+    .contact-form-wrapper {
+        font-size: 12px;
+
+        .bold-text {
+            font-size: 14px;
+        }
+
+    }
+
+    .label-contact-text {
+        right: 25px !important;
+        top: 17px !important;
+        font-size: 16px !important;
+    }
+
+    .contact-wrapper {
+        height: max-content !important;
+        padding: 20px;
+    }
+
+    .footer-link-item {
+        font-size: 12px !important;
+    }
+
+    .copy-right-text {
+        font-size: 12px !important;
+        padding: 8px !important;
     }
 
 
