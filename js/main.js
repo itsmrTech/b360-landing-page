@@ -1,6 +1,5 @@
 
 // Loading start
-
 const loadingItems = document.querySelectorAll('.loading-text-box');
 const loadingWrapper = document.querySelector('.loading-wrapper');
 
@@ -69,7 +68,12 @@ closeMenuButton.addEventListener('click' , () => {
 
 const viewportHeight = Math.max(document.documentElement.clientHeight, window.innerHeight || 0);
 const viewportWidth = Math.max(document.documentElement.clientWidth, window.innerWidth || 0);
-
+gsap.registerPlugin(ScrollTrigger,ScrollSmoother);
+const smoother = ScrollSmoother.create({
+    smooth: 1, // how long (in seconds) it takes to "catch up" to the native scroll position
+    effects: true, // looks for data-speed and data-lag attributes on elements
+    smoothTouch: 0.1, // much shorter smoothing time on touch devices (default is NO smoothing on touch devices)
+  });
 function allGsapAnimationHandlerDesktop(){
 
 
@@ -91,130 +95,133 @@ function allGsapAnimationHandlerDesktop(){
     const panel4Wrapper = panel4.querySelector(".swiper-wrapper");
 
     const contactWrapper = document.querySelector('.panel-5');
+    
+    //add smooth scroll to the whole page. when user scrolls, the page should scroll smoothly.
+   
 
 // Timeline اصلی
-    const mainTimeline = gsap.timeline({
-        scrollTrigger: {
-            trigger: "main",
-            start: "top top",
-            end: () => {
-                // مجموع طول همه بخش‌ها
-                const totalSlides = headerSlides.length + whyUsSlides.length + portfolioSlides.length + panel4Slides.length + 2; // +1 برای contact
-                return "+=" + 15000;
-            },
-            scrub: 1,
-            pin: true,
-            markers: true,
-        },
-        defaults: { ease: "none" }
-    });
+    // const mainTimeline = gsap.timeline({
+    //     scrollTrigger: {
+    //         trigger: "main",
+    //         start: "top top",
+    //         end: () => {
+    //             // مجموع طول همه بخش‌ها
+    //             const totalSlides = headerSlides.length + whyUsSlides.length + portfolioSlides.length + panel4Slides.length + 2; // +1 برای contact
+    //             return "+=" + 15000;
+    //         },
+    //         scrub: 1,
+    //         pin: true,
+    //         markers: true,
+    //     },
+    //     defaults: { ease: "none" }
+    // });
 
 // --- Header افقی ---
     const headerSlideWidth = headerSlides[0]?.clientWidth || 0;
     const headerSliderTotal = headerSlideWidth * headerSlides.length;
     const headerSlidesPerSection = 4; // ثابت
 
-    mainTimeline.fromTo(
-        headerWrapper,
-        { xPercent: 0, x: headerSlideWidth * 2 },
-        { xPercent: 0, x: -((headerSliderTotal / headerSlidesPerSection) + (headerSlideWidth * 2)), duration: 3 },
-        0
-    );
+    // mainTimeline.fromTo(
+    //     headerWrapper,
+    //     { xPercent: 0, x: headerSlideWidth * 2 },
+    //     { xPercent: 0, x: -((headerSliderTotal / headerSlidesPerSection) + (headerSlideWidth * 2)), duration: 3 },
+    //     0
+    // );
 
-    headerSlides.forEach(slide => {
-        mainTimeline.fromTo(slide, { opacity: 0.1, y: 70 }, { opacity: 1, y: 0, duration: 2 }, 0);
-    });
+    // headerSlides.forEach(slide => {
+    //     mainTimeline.fromTo(slide, { opacity: 0.1, y: 70 }, { opacity: 1, y: 0, duration: 2 }, 0);
+    // });
 
 // --- همه بخش‌ها در ابتدا یک viewport پایین ---
-    [whyUsSection, portfolioSection, panel4, contactWrapper].forEach(sec => {
-        gsap.set(sec, { y: viewportHeight });
-    });
+    // [whyUsSection, portfolioSection, panel4, contactWrapper].forEach(sec => {
+    //     gsap.set(sec, { y: viewportHeight });
+    // });
 
-    mainTimeline.fromTo(
-        header,
-        { y: 0, scale: 1, opacity: 1, filter: "blur(0px)" },
-        { y: 0, scale: 0.5, duration: 0.5, filter: "blur(3px)", opacity: 0.4 },
-        3
-    );
+    // mainTimeline.fromTo(
+    //     header,
+    //     { y: 0, scale: 1, opacity: 1, filter: "blur(0px)" },
+    //     { y: 0, scale: 0.5, duration: 0.5, filter: "blur(3px)", opacity: 0.4 },
+    //     3
+    // );
 
 // --- Why Us Section ---
-    mainTimeline.fromTo(
-        whyUsSection,
-        { y: viewportHeight, scale: 0.7, filter: "blur(3px)" },
-        { y: 0, scale: 1, duration: 1, ease: "power1.inOut", filter: "blur(0px)" },
-        3
-    );
+    // mainTimeline.fromTo(
+    //     whyUsSection,
+    //     { y: viewportHeight, scale: 0.7, filter: "blur(3px)" },
+    //     { y: 0, scale: 1, duration: 1, ease: "power1.inOut", filter: "blur(0px)" },
+    //     3
+    // );
 
-    whyUsSlides.forEach((slide, i) => {
-        if (i === 0) {
-            mainTimeline.fromTo(slide, { opacity: 1 }, { opacity: 0, duration: 0.5 });
-        } else if (i !== whyUsSlides.length - 1) {
-            mainTimeline.fromTo(slide, { opacity: 0 }, { opacity: 1, duration: 0.5 })
-                .to(slide, { opacity: 0, duration: 1 });
-        } else {
-            mainTimeline.fromTo(slide, { opacity: 0 }, { opacity: 1, duration: 0.5 });
-        }
-    });
+    // whyUsSlides.forEach((slide, i) => {
+    //     if (i === 0) {
+    //         mainTimeline.fromTo(slide, { opacity: 1 }, { opacity: 0, duration: 0.5 });
+    //     } else if (i !== whyUsSlides.length - 1) {
+    //         mainTimeline.fromTo(slide, { opacity: 0 }, { opacity: 1, duration: 0.5 })
+    //             .to(slide, { opacity: 0, duration: 1 });
+    //     } else {
+    //         mainTimeline.fromTo(slide, { opacity: 0 }, { opacity: 1, duration: 0.5 });
+    //     }
+    // });
 
-    mainTimeline.fromTo(
-        whyUsSection,
-        { y: 0, scale: 1, filter: "blur(0px)"},
-        { y: 0, scale: 0.5, duration: 0.5, filter: "blur(3px)" },
-        6.7
-    );
+    // mainTimeline.fromTo(
+    //     whyUsSection,
+    //     { y: 0, scale: 1, filter: "blur(0px)"},
+    //     { y: 0, scale: 0.5, duration: 0.5, filter: "blur(3px)" },
+    //     6.7
+    // );
 
 // --- Portfolio Section ---
-    mainTimeline.fromTo(
-        portfolioSection,
-        { y: viewportHeight, scale: 0.7, filter: "blur(3px)" },
-        { y: 0, duration: 0.75, scale: 1, filter: "blur(0px)" },
-        6.7
-    );
+    // mainTimeline.fromTo(
+    //     portfolioSection,
+    //     { y: viewportHeight, scale: 0.7, filter: "blur(3px)" },
+    //     { y: 0, duration: 0.75, scale: 1, filter: "blur(0px)" },
+    //     6.7
+    // );
 
     const portfolioSlideWidth = portfolioSlides[0]?.clientWidth || 0;
     const portfolioSliderTotal = portfolioSlideWidth * portfolioSlides.length;
 
-    mainTimeline.fromTo(
-        portfolioWrapper,
-        { x: 0 },
-        { x: -(portfolioSliderTotal - portfolioSlideWidth), duration: 3 }
-    );
+    // mainTimeline.fromTo(
+    //     portfolioWrapper,
+    //     { x: 0 },
+    //     { x: -(portfolioSliderTotal - portfolioSlideWidth), duration: 3 }
+    // );
 
-    mainTimeline.fromTo(
-        portfolioSection,
-        { y: 0, filter: "blur(0px)", scale: 1, rotationX: 0 },
-        { y: 0, duration: 0.75, filter: "blur(3px)", scale: 0.8, rotationX: -15 },
-        10.5
-    );
+    // mainTimeline.fromTo(
+    //     portfolioSection,
+    //     { y: 0, filter: "blur(0px)", scale: 1, rotationX: 0 },
+    //     { y: 0, duration: 0.75, filter: "blur(3px)", scale: 0.8, rotationX: -15 },
+    //     10.5
+    // );
 
 // --- Panel 4 Section ---
-    mainTimeline.fromTo(
-        panel4,
-        { y: viewportHeight, rotationX: 15, scale:0.8, translateY: 20, filter: "blur(3px)" },
-        { y: 0, duration: 1, rotationX: 0, scale:1, translateY: 0, filter: "blur(0px)" },
-        10.5
-    );
+    // mainTimeline.fromTo(
+    //     panel4,
+    //     { y: viewportHeight, rotationX: 15, scale:0.8, translateY: 20, filter: "blur(3px)" },
+    //     { y: 0, duration: 1, rotationX: 0, scale:1, translateY: 0, filter: "blur(0px)" },
+    //     10.5
+    // );
 
     const panel4SlideWidth = panel4Slides[0]?.clientWidth || 0;
     const panel4SliderTotal = panel4SlideWidth * panel4Slides.length;
 
-    mainTimeline.fromTo(
-        panel4Wrapper,
-        { x: 0 },
-        { x: -(panel4SliderTotal - panel4SlideWidth), duration: 2 }
-    );
+//     mainTimeline.fromTo(
+//         panel4Wrapper,
+//         { x: 0 },
+//         { x: -(panel4SliderTotal - panel4SlideWidth), duration: 2 }
+//     );
 
-// --- Contact Section ---
-    mainTimeline.fromTo(
-        contactWrapper,
-        { y: viewportHeight },
-        { y: 0, duration: 1 }
-    );
-    mainTimeline.fromTo(
-        contactWrapper,
-        { y: 0 },
-        { y: 0, duration: 1 }
-    );
+// // --- Contact Section ---
+//     mainTimeline.fromTo(
+//         contactWrapper,
+//         { y: viewportHeight },
+//         { y: 0, duration: 1 }
+//     );
+//     mainTimeline.fromTo(
+//         contactWrapper,
+//         { y: 0 },
+//         { y: 0, duration: 1 }
+//     );
 }
 
 function allGsapAnimationHandlerMobile(){
@@ -239,128 +246,128 @@ function allGsapAnimationHandlerMobile(){
 
     const contactWrapper = document.querySelector('.panel-5');
 
-// Timeline اصلی
-    const mainTimeline = gsap.timeline({
-        scrollTrigger: {
-            trigger: "main",
-            start: "top top",
-            end: () => {
-                // مجموع طول همه بخش‌ها
-                const totalSlides = headerSlides.length + whyUsSlides.length + portfolioSlides.length + panel4Slides.length + 2; // +1 برای contact
-                return "+=" + 15000;
-            },
-            scrub: 1,
-            pin: true,
-            markers: true,
-        },
-        defaults: { ease: "none" }
-    });
+// // Timeline اصلی
+//     const mainTimeline = gsap.timeline({
+//         scrollTrigger: {
+//             trigger: "main",
+//             start: "top top",
+//             end: () => {
+//                 // مجموع طول همه بخش‌ها
+//                 const totalSlides = headerSlides.length + whyUsSlides.length + portfolioSlides.length + panel4Slides.length + 2; // +1 برای contact
+//                 return "+=" + 15000;
+//             },
+//             scrub: 1,
+//             pin: true,
+//             markers: false,
+//         },
+//         defaults: { ease: "none" }
+//     });
 
-    // --- Header عمودی ---
-    let headerSlidesHeight = 0;
-    headerSlides.forEach((headerItem, i) => {
-        if(i !== (headerSlides.length - 1))
-            headerSlidesHeight += headerItem.clientHeight
-    })
+//     // --- Header عمودی ---
+//     let headerSlidesHeight = 0;
+//     headerSlides.forEach((headerItem, i) => {
+//         if(i !== (headerSlides.length - 1))
+//             headerSlidesHeight += headerItem.clientHeight
+//     })
 
-    mainTimeline.fromTo(
-        headerWrapper,
-        { y: 0 },
-        { y: -headerSlidesHeight, duration: 3 },
-        0
-    );
+//     mainTimeline.fromTo(
+//         headerWrapper,
+//         { y: 0 },
+//         { y: -headerSlidesHeight, duration: 3 },
+//         0
+//     );
 
-    headerSlides.forEach(slide => {
-        mainTimeline.fromTo(slide, { y: 70 }, { y: 0, duration: 2 }, 0);
-    });
+//     headerSlides.forEach(slide => {
+//         mainTimeline.fromTo(slide, { y: 70 }, { y: 0, duration: 2 }, 0);
+//     });
 
-// --- همه بخش‌ها در ابتدا یک viewport پایین ---
-    [whyUsSection, portfolioSection, panel4, contactWrapper].forEach(sec => {
-        gsap.set(sec, { y: viewportHeight });
-    });
+// // --- همه بخش‌ها در ابتدا یک viewport پایین ---
+//     [whyUsSection, portfolioSection, panel4, contactWrapper].forEach(sec => {
+//         gsap.set(sec, { y: viewportHeight });
+//     });
 
-    mainTimeline.fromTo(
-        header,
-        { y: 0, scale: 1, opacity: 1, filter: "blur(0px)" },
-        { y: 0, scale: 0.5, duration: 0.5, filter: "blur(3px)", opacity: 0.4 },
-        3
-    );
+//     mainTimeline.fromTo(
+//         header,
+//         { y: 0, scale: 1, opacity: 1, filter: "blur(0px)" },
+//         { y: 0, scale: 0.5, duration: 0.5, filter: "blur(3px)", opacity: 0.4 },
+//         3
+//     );
 
-// --- Why Us Section ---
-    mainTimeline.fromTo(
-        whyUsSection,
-        { y: viewportHeight, scale: 0.7, filter: "blur(3px)" },
-        { y: 0, scale: 1, duration: 1, ease: "power1.inOut", filter: "blur(0px)" },
-        3
-    );
+// // --- Why Us Section ---
+//     mainTimeline.fromTo(
+//         whyUsSection,
+//         { y: viewportHeight, scale: 0.7, filter: "blur(3px)" },
+//         { y: 0, scale: 1, duration: 1, ease: "power1.inOut", filter: "blur(0px)" },
+//         3
+//     );
 
-    whyUsSlides.forEach((slide, i) => {
-        if (i === 0) {
-            mainTimeline.fromTo(slide, { opacity: 1 }, { opacity: 0, duration: 0.5 });
-        } else if (i !== whyUsSlides.length - 1) {
-            mainTimeline.fromTo(slide, { opacity: 0 }, { opacity: 1, duration: 0.5 })
-                .to(slide, { opacity: 0, duration: 1 });
-        } else {
-            mainTimeline.fromTo(slide, { opacity: 0 }, { opacity: 1, duration: 0.5 });
-        }
-    });
+//     whyUsSlides.forEach((slide, i) => {
+//         if (i === 0) {
+//             mainTimeline.fromTo(slide, { opacity: 1 }, { opacity: 0, duration: 0.5 });
+//         } else if (i !== whyUsSlides.length - 1) {
+//             mainTimeline.fromTo(slide, { opacity: 0 }, { opacity: 1, duration: 0.5 })
+//                 .to(slide, { opacity: 0, duration: 1 });
+//         } else {
+//             mainTimeline.fromTo(slide, { opacity: 0 }, { opacity: 1, duration: 0.5 });
+//         }
+//     });
 
-    mainTimeline.fromTo(
-        whyUsSection,
-        { y: 0, scale: 1, filter: "blur(0px)"},
-        { y: 0, scale: 0.5, duration: 0.5, filter: "blur(3px)" },
-        6.7
-    );
+//     mainTimeline.fromTo(
+//         whyUsSection,
+//         { y: 0, scale: 1, filter: "blur(0px)"},
+//         { y: 0, scale: 0.5, duration: 0.5, filter: "blur(3px)" },
+//         6.7
+//     );
 
-// --- Portfolio Section ---
-    mainTimeline.fromTo(
-        portfolioSection,
-        { y: viewportHeight, scale: 0.7, filter: "blur(3px)" },
-        { y: 0, duration: 0.75, scale: 1, filter: "blur(0px)" },
-        6.7
-    );
+// // --- Portfolio Section ---
+//     mainTimeline.fromTo(
+//         portfolioSection,
+//         { y: viewportHeight, scale: 0.7, filter: "blur(3px)" },
+//         { y: 0, duration: 0.75, scale: 1, filter: "blur(0px)" },
+//         6.7
+//     );
 
-    const portfolioSlideWidth = portfolioSlides[0]?.clientWidth || 0;
-    const portfolioSliderTotal = portfolioSlideWidth * portfolioSlides.length;
+//     const portfolioSlideWidth = portfolioSlides[0]?.clientWidth || 0;
+//     const portfolioSliderTotal = portfolioSlideWidth * portfolioSlides.length;
 
-    mainTimeline.fromTo(
-        portfolioWrapper,
-        { x: 0 },
-        { x: -(portfolioSliderTotal - portfolioSlideWidth), duration: 3 }
-    );
+//     mainTimeline.fromTo(
+//         portfolioWrapper,
+//         { x: 0 },
+//         { x: -(portfolioSliderTotal - portfolioSlideWidth), duration: 3 }
+//     );
 
-    mainTimeline.fromTo(
-        portfolioSection,
-        { y: 0, filter: "blur(0px)", scale: 1, rotationX: 0 },
-        { y: 0, duration: 0.75, filter: "blur(3px)", scale: 0.8, rotationX: -15 },
-        10.5
-    );
+//     mainTimeline.fromTo(
+//         portfolioSection,
+//         { y: 0, filter: "blur(0px)", scale: 1, rotationX: 0 },
+//         { y: 0, duration: 0.75, filter: "blur(3px)", scale: 0.8, rotationX: -15 },
+//         10.5
+//     );
 
-// --- Panel 4 Section ---
-    mainTimeline.fromTo(
-        panel4,
-        { y: viewportHeight, rotationX: 15, scale:0.8, translateY: 20, filter: "blur(3px)" },
-        { y: 0, duration: 1, rotationX: 0, scale:1, translateY: 0, filter: "blur(0px)" },
-        10.5
-    );
+// // --- Panel 4 Section ---
+//     mainTimeline.fromTo(
+//         panel4,
+//         { y: viewportHeight, rotationX: 15, scale:0.8, translateY: 20, filter: "blur(3px)" },
+//         { y: 0, duration: 1, rotationX: 0, scale:1, translateY: 0, filter: "blur(0px)" },
+//         10.5
+//     );
 
-    const panel4SlideWidth = panel4Slides[0]?.clientWidth || 0;
-    const panel4SliderTotal = panel4SlideWidth * panel4Slides.length;
+//     const panel4SlideWidth = panel4Slides[0]?.clientWidth || 0;
+//     const panel4SliderTotal = panel4SlideWidth * panel4Slides.length;
 
-    mainTimeline.fromTo(
-        panel4Wrapper,
-        { x: 0 },
-        { x: -(panel4SliderTotal - panel4SlideWidth), duration: 2 }
-    );
+//     mainTimeline.fromTo(
+//         panel4Wrapper,
+//         { x: 0 },
+//         { x: -(panel4SliderTotal - panel4SlideWidth), duration: 2 }
+//     );
 
-    let plusScroll = contactWrapper.clientHeight - viewportHeight
+//     let plusScroll = contactWrapper.clientHeight - viewportHeight
 
-// --- Contact Section ---
-    mainTimeline.fromTo(
-        contactWrapper,
-        { y: viewportHeight },
-        { y: -plusScroll, duration: 1 }
-    );
+// // --- Contact Section ---
+//     mainTimeline.fromTo(
+//         contactWrapper,
+//         { y: viewportHeight },
+//         { y: -plusScroll, duration: 1 }
+//     );
 /*    mainTimeline.fromTo(
         contactWrapper,
         { y: -plusScroll },
@@ -368,10 +375,10 @@ function allGsapAnimationHandlerMobile(){
     );*/
 }
 
-if(viewportWidth > 992)
-    setTimeout(allGsapAnimationHandlerDesktop , 3700)
-else
-    setTimeout(allGsapAnimationHandlerMobile , 3700)
+// if(viewportWidth > 992)
+//     setTimeout(allGsapAnimationHandlerDesktop , 3700)
+// else
+//     setTimeout(allGsapAnimationHandlerMobile , 3700)
 
 
 /*
