@@ -148,6 +148,14 @@ header {
     }
 
 }
+.navbar {
+    padding: 20px;
+    mix-blend-mode: difference;
+    position: fixed;
+    z-index: 1000;
+    width: 100vw;
+    
+}
 
 .menu-wrapper {
     position: fixed;
@@ -161,6 +169,7 @@ header {
     transition: 0.5s;
     align-items: center;
     overflow: hidden;
+
 
     .line-wrapper-shape {
         width: 100%;
@@ -495,6 +504,31 @@ header {
 
 /* Start Loading */
 
+.portfolio-header-text {
+    color: white;
+    font-size: 1.5vw;
+    position: absolute;
+    left: 20px;
+    width: 1000px;
+    opacity: 0;
+    display: none;
+    transform: translateY(40px);
+
+}
+
+.portfolio-section {
+    height: 200vh !important;
+}
+.portfolio {
+    height: 100vh;
+}
+
+.navbar-title {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+}
+
 .loading-wrapper
 {
     height: 100dvh;
@@ -507,6 +541,11 @@ header {
     justify-content: center;
     overflow: hidden;
     transition: all 1s ease-in-out;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1001;
+    
 
 
     .loading-text-box {
@@ -615,7 +654,7 @@ header {
 }
 
 .fullscreen-section {
-    height: 100dvh;
+    min-height: 100dvh;
     /* position: fixed; */
     width: 100dvw;
 }
@@ -643,6 +682,10 @@ header {
     z-index: 5;
 }
 
+
+.whyUsSlider {
+margin-top: 100px;
+}
 
 .whyUsSlider {
     .swiper-wrapper {

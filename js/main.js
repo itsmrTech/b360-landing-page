@@ -375,6 +375,130 @@ function allGsapAnimationHandlerMobile(){
     );*/
 }
 
+
+const navbarTimeline = gsap.timeline({
+    scrollTrigger: {
+        trigger: 'main',
+        start: 'top top',
+        end: 'top -100%',
+        scrub: 1,
+        markers: true,
+    }
+});
+
+navbarTimeline.to('.logo', {
+    scale: 0.7,
+    duration: 1,
+    ease: 'power1.inOut',
+});
+navbarTimeline.to('.hamburger', {
+    scale: 0.7,
+    duration: 1,
+    ease: 'power1.inOut',
+}, '<');
+navbarTimeline.to('.logo', {
+    y: -20,
+    duration: 1,
+    ease: 'power1.inOut',
+});
+navbarTimeline.to('.hamburger', {
+    marginRight: 40,
+    duration: 0.5,
+    ease: 'power1.inOut',
+}, '<');
+navbarTimeline.to('.logo', {
+    scale:0.4,
+    y:-30,
+    duration: 1,
+    ease: 'power1.inOut',
+    delay: 1,
+});
+navbarTimeline.to('.navbar-title', {
+    x:-40,
+    duration: 0.5,
+    ease: 'power1.inOut',
+});
+
+const navbarPortfolioTimeline = gsap.timeline({
+    scrollTrigger: {
+        trigger: '.portfolio',
+        start: 'top 0%',
+        end: 'top -10%',
+        scrub: 1,
+        markers: {startColor: "blue", endColor: "blue"},
+    }
+});
+
+navbarPortfolioTimeline.to('.logo-desc', {
+    y:-60,
+    duration: 0.5,
+    ease: 'power1.inOut',
+});
+
+navbarPortfolioTimeline.to('.portfolio-header-text', {
+    opacity: 1,
+    display: 'block',
+    y:0,
+
+    duration: 0.7,
+    ease: 'power1.inOut',
+},'<');
+
+
+
+const portfolioTimeline = gsap.timeline({
+    scrollTrigger: {
+        trigger: '.portfolio',
+        start: 'top top',
+        end: 'bottom top',
+        scrub: 1,
+        pin: true,
+        markers: true,
+
+    }
+});
+
+const portfolioSlides = gsap.utils.toArray(".portfolio-slide");
+const portfolioSlideWidth = portfolioSlides[0]?.clientWidth || window.innerWidth;
+const portfolioTotalWidth = portfolioSlideWidth * portfolioSlides.length;
+console.log('portfolioTotalWidth', portfolioTotalWidth)
+console.log('portfolioSlideWidth', portfolioSlideWidth)
+console.log('portfolioSlides', portfolioSlides.length)
+
+portfolioTimeline.to('.portfolio-slider-wrapper', {
+    x: -portfolioTotalWidth + portfolioSlideWidth,
+    duration: 1,
+    ease: 'none',
+});
+
+const panel4Timeline = gsap.timeline({
+    scrollTrigger: {
+        trigger: '.vision',
+        start: 'top top',
+        end: 'bottom top',
+        scrub: 1,
+        pin: true,
+        markers: true,
+    }
+});
+
+const panel4Slides = gsap.utils.toArray(".vision-item");
+const panel4SlideWidth = panel4Slides[0]?.clientWidth || window.innerWidth;
+const panel4TotalWidth = panel4SlideWidth * panel4Slides.length;
+
+panel4Timeline.to('.vision-wrappet', {
+    x: -panel4TotalWidth + panel4SlideWidth,
+    duration: 1,
+    ease: 'none',
+});
+panel4Timeline.to('.footer-img-text p', {
+    x: -240,
+    duration: 1,
+    ease: 'power1.inOut',
+},'<');
+
+
+
 // if(viewportWidth > 992)
 //     setTimeout(allGsapAnimationHandlerDesktop , 3700)
 // else
