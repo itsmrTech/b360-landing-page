@@ -54,16 +54,13 @@ if(randomOrder.length){
 // Menu Handler
 const menuWrapper = document.querySelector('#menu-wrapper');
 const menuButton = document.querySelector('#menu-button');
-const closeMenuButton = document.querySelector('#close-menu-button');
 
 
 menuButton.addEventListener('click' , () => {
-    menuWrapper.classList.add('active')
+    menuWrapper.classList.toggle('active')
 })
 
-closeMenuButton.addEventListener('click' , () => {
-    menuWrapper.classList.remove('active')
-})
+
 
 
 const viewportHeight = Math.max(document.documentElement.clientHeight, window.innerHeight || 0);
@@ -401,11 +398,16 @@ navbarTimeline.to('.logo', {
     duration: 1,
     ease: 'power1.inOut',
 });
-navbarTimeline.to('.hamburger', {
+navbarTimeline.to('.right-nav', {
     marginRight: 40,
     duration: 0.5,
     ease: 'power1.inOut',
 }, '<');
+navbarTimeline.to('.right-nav', {
+    marginTop:-50,
+    duration: 0.5,
+    ease: 'power1.inOut',
+});
 navbarTimeline.to('.logo', {
     scale:0.4,
     y:-30,
@@ -443,6 +445,116 @@ navbarPortfolioTimeline.to('.portfolio-header-text', {
     duration: 0.7,
     ease: 'power1.inOut',
 },'<');
+navbarPortfolioTimeline.to('.why-us-nav-title', {
+    opacity: 0,
+    top: -40,
+    duration: 0.2,
+    ease: 'power1.inOut',
+},'<');
+navbarPortfolioTimeline.to('.portfolio-nav-title', {
+    opacity: 1,
+    top: -20,
+    duration: 0.2,
+    ease: 'power1.inOut',
+},'<');
+
+const whyUsTimeline = gsap.timeline({
+    scrollTrigger: {
+        trigger: '.why-us-section',
+        start: 'top top',
+        end: 'bottom -200%',
+        scrub: 1,
+        pin: true,
+        markers: true,
+    }
+});
+whyUsTimeline.from('.why-us-img-1', {
+    scale: 1,
+    duration: 0.2,
+    ease: 'power1.inOut',
+});
+
+
+whyUsTimeline.to('.why-us-nav-title', {
+    opacity: 1,
+    top: -20,
+    duration: 0.02,
+    ease: 'power1.inOut',
+},'<');
+whyUsTimeline.to('.why-us-img-1', {
+    scale: 0.9,
+    duration: 0.2,
+    ease: 'power1.inOut',
+},'<');
+
+whyUsTimeline.to('.why-us-img-2', {
+    scale: 1,
+    duration: 0.2,
+    ease: 'power1.inOut',
+},'<');
+whyUsTimeline.to('.why-us-img-1', {
+    opacity: 0,
+    duration:0.001
+});
+whyUsTimeline.to('.logo-description-1', {
+    opacity: 0,
+    duration: 0.2,
+    ease: 'power1.inOut',
+});
+whyUsTimeline.to('.dot-1',{
+    opacity: 0.4,
+    duration: 0.2,
+    ease: 'power1.inOut',
+},'<');
+whyUsTimeline.to('.dot-2',{
+    opacity: 1,
+    duration: 0.2,
+    ease: 'power1.inOut',
+},'<');
+whyUsTimeline.to('.logo-description-2', {
+    opacity: 1,
+    duration: 0.2,
+    ease: 'power1.inOut',
+},'<');
+
+whyUsTimeline.to('.why-us-img-2', {
+    scale: 0.9,
+    duration: 0.2,
+    ease: 'power1.inOut',
+    delay: 0.5,
+});
+whyUsTimeline.to('.why-us-img-3', {
+    scale: 1,
+    duration: 0.2,
+    ease: 'power1.inOut',
+},'<');
+whyUsTimeline.to('.why-us-img-2', {
+    opacity: 0,
+    duration:0.001
+});
+whyUsTimeline.to('.dot-2',{
+    opacity: 0.4,
+    duration: 0.2,
+    ease: 'power1.inOut',
+},'<');
+whyUsTimeline.to('.dot-3',{
+    opacity: 1,
+    duration: 0.2,
+    ease: 'power1.inOut',
+},'<');
+whyUsTimeline.to('.logo-description-2', {
+    opacity: 0,
+    duration: 0.2,
+    ease: 'power1.inOut',
+},'<');
+whyUsTimeline.to('.logo-description-3', {
+    opacity: 1,
+    duration: 0.2,
+    ease: 'power1.inOut',
+},'<');
+whyUsTimeline.to('.why-us-img-3', {
+    duration:0.5
+});
 
 
 
@@ -471,6 +583,14 @@ portfolioTimeline.to('.portfolio-slider-wrapper', {
     ease: 'none',
 });
 
+portfolioTimeline.to('.portfolio-nav-title', {
+    opacity: 0,
+    top: -40,
+    duration: 0.2,
+    ease: 'power1.inOut',
+});
+
+
 const panel4Timeline = gsap.timeline({
     scrollTrigger: {
         trigger: '.vision',
@@ -486,6 +606,13 @@ const panel4Slides = gsap.utils.toArray(".vision-item");
 const panel4SlideWidth = panel4Slides[0]?.clientWidth || window.innerWidth;
 const panel4TotalWidth = panel4SlideWidth * panel4Slides.length;
 
+panel4Timeline.to('.portfolio-nav-title', {
+    opacity: 0,
+    top: -40,
+    duration: 0.2,
+    ease: 'power1.inOut',
+});
+
 panel4Timeline.to('.vision-wrappet', {
     x: -panel4TotalWidth + panel4SlideWidth,
     duration: 1,
@@ -494,6 +621,28 @@ panel4Timeline.to('.vision-wrappet', {
 panel4Timeline.to('.footer-img-text p', {
     x: -240,
     duration: 1,
+    ease: 'power1.inOut',
+},'<');
+
+
+const navbarContactTimeline = gsap.timeline({
+    scrollTrigger: {
+        trigger: '.contact-wrapper',
+        start: 'top top',
+        end: 'top top',
+        scrub: 1,
+    }
+});
+navbarContactTimeline.to('.portfolio-nav-title', {
+    opacity: 0,
+    top: -40,
+    duration: 0.2,
+    ease: 'power1.inOut',
+});
+navbarContactTimeline.to('.contact-nav-title', {
+    opacity: 1,
+    top: -20,
+    duration: 0.2,
     ease: 'power1.inOut',
 },'<');
 
