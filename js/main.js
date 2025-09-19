@@ -612,6 +612,11 @@ panel4Timeline.to('.portfolio-nav-title', {
     duration: 0.2,
     ease: 'power1.inOut',
 });
+panel4Timeline.to('.portfolio-header-text', {
+    opacity: 0,
+    duration: 0.2,
+    ease: 'power1.inOut',
+},'<');
 
 panel4Timeline.to('.vision-wrappet', {
     x: -panel4TotalWidth + panel4SlideWidth,
