@@ -634,15 +634,15 @@ servicesTimeline.to('.item-2 .services-right-item-content p',{
     ease: 'power1.inOut',
 },'<');
 servicesTimeline.to('.services-image.item-1', {
-    opacity: 0,
-    duration: 0.2,
+    'mask-image': 'linear-gradient(to bottom, transparent 100%, black 100%)',
+    duration: 0.5,
     ease: 'power1.inOut',
 },'<');
 servicesTimeline.to('.services-image.item-2', {
-    opacity: 1,
-    duration: 0.2,
+    'mask-image': 'linear-gradient(to top, transparent 0%, black 0%)',
+    duration: 0.5,
     ease: 'power1.inOut',
-});
+},'<');
 servicesTimeline.to('.services-image.item-2', {
     duration:0.5
 });
@@ -667,13 +667,13 @@ servicesTimeline.to('.item-3 .services-right-item-content p',{
     ease: 'power1.inOut',
 },'<');
 servicesTimeline.to('.services-image.item-3', {
-    opacity: 1,
-    duration: 0.2,
+    'mask-image': 'linear-gradient(to top, transparent 0%, black 0%)',
+    duration: 0.5,
     ease: 'power1.inOut',
-});
+},'<');
 servicesTimeline.to('.services-image.item-2', {
-    opacity: 0,
-    duration: 0.2,
+    'mask-image': 'linear-gradient(to bottom, transparent 100%, black 100%)',
+    duration: 0.5,
     ease: 'power1.inOut',
 },'<');
 
