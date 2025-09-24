@@ -460,7 +460,7 @@ navbarPortfolioTimeline.to('.portfolio-nav-title', {
 
 const whyUsTimeline = gsap.timeline({
     scrollTrigger: {
-        trigger: '.why-us-section',
+        trigger: '.whyUsSlider',
         start: 'top top',
         end: 'bottom -200%',
         scrub: 1,
@@ -588,6 +588,11 @@ portfolioTimeline.to('.portfolio-nav-title', {
     duration: 0.2,
     ease: 'power1.inOut',
 });
+portfolioTimeline.to('.portfolio-header-text',{
+    opacity: 0,
+    duration: 0.2,
+    ease: 'power1.inOut',
+},'<')
 
 
 const panel4Timeline = gsap.timeline({

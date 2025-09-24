@@ -267,6 +267,10 @@ header {
     opacity: 1;
 }
 
+.whyUsSlider {
+    padding-top: 20vh !important;
+}
+
 
 .slider-wrapper {
     padding: 40px;
