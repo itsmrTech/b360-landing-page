@@ -695,6 +695,7 @@ header {
     left: 0;
     z-index: 1003;
     position: fixed;
+
     
 
 
@@ -719,11 +720,13 @@ header {
         justify-content: center;
         white-space: nowrap;
         text-align: center;
-        font-family: 'DrukWide';
         font-weight: 900;
         padding: 0 0.2em;
         opacity: 0;
         transition: .4s;
+        font-family: 'Basica';
+
+
     }
 
     .main-loading-text.active {
@@ -752,13 +755,14 @@ header {
 @keyframes fade-slide {
     0% {
         opacity: 1;
-        height: 100dvh;
         padding: 40px;
     }
-    100% {
+    99% {
         opacity: 0;
-        height: 0dvh;
         padding: 0;
+    }
+    100% {
+        display: none;
     }
 }
 

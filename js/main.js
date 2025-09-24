@@ -32,6 +32,7 @@ function showMainTextLoading(){
     if(mainTextLoading){
         setTimeout(() => {
             mainTextLoading.classList.add('active');
+
             endLoadingAnimationHandler()
         } , 450)
     }
