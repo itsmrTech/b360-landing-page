@@ -680,32 +680,6 @@ servicesTimeline.to('.services-image.item-2', {
 servicesTimeline.to('.services-right-item.item-3 .services-right-item-content', {
 duration:0.5
 })
-const panel4Slides = gsap.utils.toArray(".vision-item");
-const panel4SlideWidth = panel4Slides[0]?.clientWidth || window.innerWidth;
-const panel4TotalWidth = panel4SlideWidth * panel4Slides.length;
-
-panel4Timeline.to('.portfolio-nav-title', {
-    opacity: 0,
-    top: -40,
-    duration: 0.2,
-    ease: 'power1.inOut',
-});
-panel4Timeline.to('.portfolio-header-text', {
-    opacity: 0,
-    duration: 0.2,
-    ease: 'power1.inOut',
-},'<');
-
-panel4Timeline.to('.vision-wrappet', {
-    x: -panel4TotalWidth + panel4SlideWidth,
-    duration: 1,
-    ease: 'none',
-});
-panel4Timeline.to('.footer-img-text p', {
-    x: -240,
-    duration: 1,
-    ease: 'power1.inOut',
-},'<');
 
 
 const navbarContactTimeline = gsap.timeline({
