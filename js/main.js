@@ -709,6 +709,27 @@ navbarContactTimeline.to('.contact-nav-title', {
 },'<');
 
 
+const contactTimeline = gsap.timeline({
+    scrollTrigger: {
+        trigger: '.contact-wrapper',
+        start: 'top 60%',
+        end: 'top 50%',
+        scrub: 1,
+    }
+});
+
+contactTimeline.to('.contact-img-wrapper', {
+    opacity: 1,
+    duration: 0.2,
+    ease: 'power1.inOut',
+});
+contactTimeline.to('.contact-form-wrapper', {
+    opacity: 1,
+    duration: 0.2,
+    ease: 'power1.inOut',
+});
+
+
 
 // if(viewportWidth > 992)
 //     setTimeout(allGsapAnimationHandlerDesktop , 3700)

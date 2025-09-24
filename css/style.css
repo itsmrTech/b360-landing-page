@@ -88,6 +88,10 @@ main {
 
 }
 
+.contact-form-wrapper, .contact-img-wrapper {
+    opacity: 0;
+}
+
 /* Start Header */
 
 header {
