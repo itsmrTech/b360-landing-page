@@ -602,6 +602,84 @@ const panel4Timeline = gsap.timeline({
     }
 });
 
+const servicesTimeline = gsap.timeline({
+    scrollTrigger: {
+        trigger: '.services-section',
+        start: 'top top',
+        end: 'bottom top',
+        scrub: 1,
+        pin: true,
+        markers: true,
+    }
+});
+
+servicesTimeline.to('.services-right-item.item-1 .services-right-item-content', {
+    opacity: 0.5,
+    duration: 0.2,
+    ease: 'power1.inOut',
+});
+servicesTimeline.to('.services-right-item.item-2 .services-right-item-content', {
+    opacity: 1,
+    duration: 0.2,
+    ease: 'power1.inOut',
+},'<');
+servicesTimeline.to('.item-1 .services-right-item-content p',{
+    opacity:0,
+    duration:0.2,
+    ease: 'power1.inOut',
+},'<');
+servicesTimeline.to('.item-2 .services-right-item-content p',{
+    opacity:1,
+    duration:0.2,
+    ease: 'power1.inOut',
+},'<');
+servicesTimeline.to('.services-image.item-1', {
+    opacity: 0,
+    duration: 0.2,
+    ease: 'power1.inOut',
+},'<');
+servicesTimeline.to('.services-image.item-2', {
+    opacity: 1,
+    duration: 0.2,
+    ease: 'power1.inOut',
+});
+servicesTimeline.to('.services-image.item-2', {
+    duration:0.5
+});
+servicesTimeline.to('.services-right-item.item-2 .services-right-item-content', {
+    opacity: 0.5,
+    duration: 0.2,
+    ease: 'power1.inOut',
+});
+servicesTimeline.to('.services-right-item.item-3 .services-right-item-content', {
+    opacity: 1,
+    duration: 0.2,
+    ease: 'power1.inOut',
+},'<');
+servicesTimeline.to('.item-2 .services-right-item-content p',{
+    opacity:0,
+    duration:0.2,
+    ease: 'power1.inOut',
+},'<');
+servicesTimeline.to('.item-3 .services-right-item-content p',{
+    opacity:1,
+    duration:0.2,
+    ease: 'power1.inOut',
+},'<');
+servicesTimeline.to('.services-image.item-3', {
+    opacity: 1,
+    duration: 0.2,
+    ease: 'power1.inOut',
+});
+servicesTimeline.to('.services-image.item-2', {
+    opacity: 0,
+    duration: 0.2,
+    ease: 'power1.inOut',
+},'<');
+
+servicesTimeline.to('.services-right-item.item-3 .services-right-item-content', {
+duration:0.5
+})
 const panel4Slides = gsap.utils.toArray(".vision-item");
 const panel4SlideWidth = panel4Slides[0]?.clientWidth || window.innerWidth;
 const panel4TotalWidth = panel4SlideWidth * panel4Slides.length;

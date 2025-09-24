@@ -417,6 +417,87 @@ header {
     }
 }
 
+.services-section {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+
+
+
+    .services-wrapper {
+        display: flex;
+        flex-direction: row;
+        align-items: flex-start;
+        color: #fff;
+        margin: 50px;
+        gap: 50px;
+        justify-content: space-between;
+    }
+    .services-wrapper  h2 {
+        color: #fff;
+    }
+    .services-left h2 {
+        font-size: 1.8vw;
+    }
+    .services-left {
+        /* margin: 50px; */
+        
+    }
+    .services-right {
+        display: flex;
+        flex-direction: row;
+        gap: 50px;
+    }
+    .services-right > div {
+        width: 33.33%;
+        h2 {
+            font-size: 2.8vw;
+            font-weight: 200;
+            text-transform: uppercase;
+        }
+        
+    }
+    .services-right-item  {
+        position: relative;
+    }
+    .services-right-item.active .services-right-item-content {
+        opacity: 1;
+        p {
+            opacity: 1;
+        }
+    }
+    .services-right-item-content {
+        opacity: 0.5;
+        p {
+            opacity: 0;
+        }
+    }
+    
+    .services-right {
+        width: 70%;
+    }
+}
+
+.services-image {
+    position: absolute;
+    top:-50px;
+    z-index:-1;
+    opacity: 0;
+    left:50px;
+    height: 50vh;
+}
+.services-image.item-1 {
+    left:-20px;
+}
+.services-image.item-3 {
+    left:-20px;
+}
+.services-image.active {
+    opacity: 1;
+}
 /* Start Contact */
 
 .contact-wrapper > div:nth-child(1){
