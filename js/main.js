@@ -482,25 +482,26 @@ whyUsTimeline.to('.why-us-nav-title', {
     ease: 'power1.inOut',
 },'<');
 whyUsTimeline.to('.why-us-img-1', {
-    scale: 0.9,
+    'mask-image': 'linear-gradient(to bottom, transparent 100%, black 100%)',
     duration: 0.2,
     ease: 'power1.inOut',
 },'<');
 
 whyUsTimeline.to('.why-us-img-2', {
-    scale: 1,
+    'mask-image': 'linear-gradient(to bottom, transparent 0%, black 0%)',
     duration: 0.2,
     ease: 'power1.inOut',
 },'<');
-whyUsTimeline.to('.why-us-img-1', {
-    opacity: 0,
-    duration:0.001
-});
-whyUsTimeline.to('.logo-description-1', {
-    opacity: 0,
+whyUsTimeline.from('.logo-description-1', {
+    'mask-image': 'linear-gradient(to bottom, transparent 0%, black 0%)',
     duration: 0.2,
     ease: 'power1.inOut',
-});
+},'<');
+whyUsTimeline.to('.logo-description-1', {
+    'mask-image': 'linear-gradient(to bottom, transparent 100%, black 100%)',
+    duration: 0.2,
+    ease: 'power1.inOut',
+},'<');
 whyUsTimeline.to('.dot-1',{
     opacity: 0.4,
     duration: 0.2,
@@ -512,26 +513,24 @@ whyUsTimeline.to('.dot-2',{
     ease: 'power1.inOut',
 },'<');
 whyUsTimeline.to('.logo-description-2', {
-    opacity: 1,
+    'mask-image': 'linear-gradient(to top, transparent 0%, black 0%)',
     duration: 0.2,
     ease: 'power1.inOut',
 },'<');
 
+
 whyUsTimeline.to('.why-us-img-2', {
-    scale: 0.9,
+    'mask-image': 'linear-gradient(to bottom, transparent 100%, black 100%)',
     duration: 0.2,
     ease: 'power1.inOut',
     delay: 0.5,
 });
 whyUsTimeline.to('.why-us-img-3', {
-    scale: 1,
+    'mask-image': 'linear-gradient(to bottom, transparent 0%, black 0%)',
     duration: 0.2,
     ease: 'power1.inOut',
 },'<');
-whyUsTimeline.to('.why-us-img-2', {
-    opacity: 0,
-    duration:0.001
-});
+
 whyUsTimeline.to('.dot-2',{
     opacity: 0.4,
     duration: 0.2,
@@ -543,12 +542,12 @@ whyUsTimeline.to('.dot-3',{
     ease: 'power1.inOut',
 },'<');
 whyUsTimeline.to('.logo-description-2', {
-    opacity: 0,
+    'mask-image': 'linear-gradient(to bottom, transparent 100%, black 100%)',
     duration: 0.2,
     ease: 'power1.inOut',
 },'<');
 whyUsTimeline.to('.logo-description-3', {
-    opacity: 1,
+    'mask-image': 'linear-gradient(to top, transparent 0%, black 0%)',
     duration: 0.2,
     ease: 'power1.inOut',
 },'<');

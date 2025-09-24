@@ -74,6 +74,9 @@ main {
         margin: 0 auto;
         left: 50%;
         transform: translateX(-50%);
+        mask-image: linear-gradient(to bottom, transparent 100%, black 100%);
+        mask-size: 100% 100%;
+        mask-repeat: no-repeat;
 
         p {
             font-size: 0.8vw;
@@ -219,15 +222,19 @@ header {
     width: 700px;
     height: 700px;
     object-fit: cover;
-    transform: scale(0.9);
+    transform: scale(1);
+    mask-image: linear-gradient(to bottom, transparent 0%, black 0%);
+    mask-size: 100% 100%;
+    mask-repeat: no-repeat;
 }
 
 .why-us-img-1 {
     transform: unset ;
+    mask-image: linear-gradient(to bottom, transparent 100%, black 100%);
 }
 
-.logo-description-2, .logo-description-3 {
-    opacity: 0;
+.logo-description-1 {
+    mask-image: linear-gradient(to bottom, transparent 0%, black 0%);
 }
 
 .why-us-content-wrapper {
