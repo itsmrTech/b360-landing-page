@@ -457,10 +457,6 @@ header {
     .services-left h2 {
         font-size: 1.8vw;
     }
-    .services-left {
-        /* margin: 50px; */
-        
-    }
     .services-right {
         display: flex;
         flex-direction: row;
@@ -494,6 +490,42 @@ header {
     .services-right {
         width: 70%;
     }
+}
+
+.hero {
+    opacity: 0;
+    transition: opacity 0.5s ease-in-out;
+}
+
+.hero.active {
+    opacity: 1;
+}
+
+.hero .swiper-slide-beta {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+
+.hero.active .swiper-slide-beta {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.hero.active .swiper-slide-beta:nth-child(1) {
+    transition-delay: 0.1s;
+}
+
+.hero.active .swiper-slide-beta:nth-child(2) {
+    transition-delay: 0.2s;
+}
+
+.hero.active .swiper-slide-beta:nth-child(3) {
+    transition-delay: 0.3s;
+}
+
+.hero.active .swiper-slide-beta:nth-child(4) {
+    transition-delay: 0.4s;
 }
 
 .services-right-item.active .services-right-item-content h2 {

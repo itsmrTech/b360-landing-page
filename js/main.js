@@ -12,6 +12,7 @@ function shuffleArray(array) {
 }
 
 const loadingItemsArray = Array.from(loadingItems);
+const hero = document.querySelector('.hero');
 const randomOrder = shuffleArray(loadingItemsArray);
 
 function endLoadingAnimationHandler(){
@@ -22,6 +23,7 @@ function endLoadingAnimationHandler(){
         } , 500)
         setTimeout(() => {
             loadingWrapper.classList.add('fade-out');
+            hero.classList.add('active');
         } , 750)
     }
 }
@@ -732,8 +734,8 @@ navbarContactTimeline.to('.contact-nav-title', {
 const contactTimeline = gsap.timeline({
     scrollTrigger: {
         trigger: '.contact-wrapper',
-        start: 'top 60%',
-        end: 'top 50%',
+        start: 'top 40%',
+        end: 'top 20%',
         scrub: 1,
     }
 });
