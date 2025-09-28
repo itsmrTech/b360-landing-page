@@ -496,6 +496,10 @@ header {
     }
 }
 
+.services-right-item.active .services-right-item-content h2 {
+    font-weight: 400;
+}
+
 .services-image {
     position: absolute;
     top:-50px;

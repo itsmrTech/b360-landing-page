@@ -628,6 +628,16 @@ servicesTimeline.to('.services-right-item.item-2 .services-right-item-content', 
     duration: 0.2,
     ease: 'power1.inOut',
 },'<');
+servicesTimeline.to('.services-right-item.item-1 .services-right-item-content h2', {
+    fontWeight: 200,
+    duration: 0.2,
+    ease: 'power1.inOut',
+},'<');
+servicesTimeline.to('.services-right-item.item-2 .services-right-item-content h2', {
+    fontWeight: 400,
+    duration: 0.2,
+    ease: 'power1.inOut',
+},'<');
 servicesTimeline.to('.item-1 .services-right-item-content p',{
     opacity:0,
     duration:0.2,
@@ -658,6 +668,16 @@ servicesTimeline.to('.services-right-item.item-2 .services-right-item-content', 
 });
 servicesTimeline.to('.services-right-item.item-3 .services-right-item-content', {
     opacity: 1,
+    duration: 0.2,
+    ease: 'power1.inOut',
+},'<');
+servicesTimeline.to('.services-right-item.item-3 .services-right-item-content h2', {
+    fontWeight: 400,
+    duration: 0.2,
+    ease: 'power1.inOut',
+},'<');
+servicesTimeline.to('.services-right-item.item-2 .services-right-item-content h2', {
+    fontWeight: 200,
     duration: 0.2,
     ease: 'power1.inOut',
 },'<');
