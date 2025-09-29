@@ -621,7 +621,7 @@ const servicesTimeline = gsap.timeline({
 });
 
 servicesTimeline.to('.services-right-item.item-1 .services-right-item-content', {
-    opacity: 0.5,
+    opacity: 1,
     duration: 0.2,
     ease: 'power1.inOut',
 });
@@ -664,7 +664,7 @@ servicesTimeline.to('.services-image.item-2', {
     duration:0.5
 });
 servicesTimeline.to('.services-right-item.item-2 .services-right-item-content', {
-    opacity: 0.5,
+    opacity: 1,
     duration: 0.2,
     ease: 'power1.inOut',
 });
