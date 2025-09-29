@@ -751,6 +751,65 @@ contactTimeline.to('.contact-form-wrapper', {
     ease: 'power1.inOut',
 });
 
+// Why Us section fade-in animation (element by element)
+const whyUsFadeTimeline = gsap.timeline({
+    scrollTrigger: {
+        trigger: '.why-us-section',
+        start: 'top 60%',
+        end: 'top 30%',
+        scrub: 1,
+    }
+});
+
+// Fade in elements sequentially with delays
+whyUsFadeTimeline.to('.why-us-content', {
+    opacity: 1,
+    duration: 0.4,
+    ease: 'power1.inOut',
+});
+whyUsFadeTimeline.to('.why-us-img-wrapper', {
+    opacity: 1,
+    duration: 0.4,
+    ease: 'power1.inOut',
+}, '+=0.2'); // 0.2s delay after previous element
+whyUsFadeTimeline.to('.logo-text-box', {
+    opacity: 1,
+    duration: 0.4,
+    ease: 'power1.inOut',
+}, '+=0.2'); // 0.2s delay after previous element
+
+// Services section fade-in animation (element by element)
+const servicesFadeTimeline = gsap.timeline({
+    scrollTrigger: {
+        trigger: '.services-section',
+        start: 'top 60%',
+        end: 'top 20%',
+        scrub: 1,
+    }
+});
+
+// Fade in elements sequentially with delays
+servicesFadeTimeline.to('.services-left', {
+    opacity: 1,
+    duration: 0.4,
+    ease: 'power1.inOut',
+});
+servicesFadeTimeline.to('.services-right-item.item-1', {
+    opacity: 1,
+    duration: 0.4,
+    ease: 'power1.inOut',
+}, '+=0.3'); // 0.3s delay after left content
+servicesFadeTimeline.to('.services-right-item.item-2', {
+    opacity: 1,
+    duration: 0.4,
+    ease: 'power1.inOut',
+}, '+=0.2'); // 0.2s delay after item-1
+servicesFadeTimeline.to('.services-right-item.item-3', {
+    opacity: 1,
+    duration: 0.4,
+    ease: 'power1.inOut',
+}, '+=0.2'); // 0.2s delay after item-2
+
 
 
 // if(viewportWidth > 992)

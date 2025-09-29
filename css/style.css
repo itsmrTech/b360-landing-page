@@ -93,6 +93,30 @@ main {
     opacity: 0;
 }
 
+/* Why Us section fade-in elements */
+.why-us-content, .why-us-img-wrapper, .logo-text-box {
+    opacity: 0;
+}
+
+/* Services section fade-in elements */
+.services-left {
+    opacity: 0;
+}
+
+/* Individual service items start hidden */
+.services-right-item {
+    opacity: 0;
+}
+
+/* Ensure service titles are always visible */
+.services-right-item-content {
+    opacity: 1 !important;
+}
+
+.services-right-item-content h2 {
+    opacity: 1 !important;
+}
+
 /* Start Header */
 
 header {
@@ -482,10 +506,14 @@ header {
         }
     }
     .services-right-item-content {
-        opacity: 0.5;
+        opacity: 1 !important;
         p {
             opacity: 0;
         }
+    }
+    
+    .services-right-item-content h2 {
+        opacity: 1 !important;
     }
     
     .services-right {
@@ -542,6 +570,7 @@ header {
     mask-image: linear-gradient(to top, transparent 100%, black 100%);
     mask-size: 100% 100%;
     mask-repeat: no-repeat;
+    filter: brightness(0.6) contrast(1.2);
 }
 .services-image.item-1 {
     left:-20px;
