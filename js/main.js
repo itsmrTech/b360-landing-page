@@ -782,33 +782,46 @@ whyUsFadeTimeline.to('.logo-text-box', {
 const servicesFadeTimeline = gsap.timeline({
     scrollTrigger: {
         trigger: '.services-section',
-        start: 'top 60%',
-        end: 'top 20%',
+        start: 'top 40%',
+        end: 'top 0%',
         scrub: 1,
     }
 });
 
 // Fade in elements sequentially with delays
+
+servicesFadeTimeline.to('.services-right-item.item-1 h2', {
+    opacity: 1,
+    duration: 0.4,
+    ease: 'power1.inOut',
+}, '+=0.3'); // 0.3s delay after left content
+servicesFadeTimeline.to('.services-right-item.item-2 h2', {
+    opacity: 1,
+    duration: 0.4,
+    ease: 'power1.inOut',
+}, '+=0.2'); // 0.2s delay after item-1
+servicesFadeTimeline.to('.services-right-item.item-3 h2', {
+    opacity: 1,
+    duration: 0.4,
+    ease: 'power1.inOut',
+}, '+=0.2'); // 0.2s delay after item-2
+servicesFadeTimeline.to('.services-right-item.item-1 p', {
+    opacity: 1,
+    duration: 0.4,
+    ease: 'power1.inOut',
+}, '+=0.2'); // 0.2s delay after item-2
+servicesFadeTimeline.to('.services-image.item-1', {
+    opacity: 1,
+    duration: 0.4,
+    ease: 'power1.inOut',
+}, '<');
 servicesFadeTimeline.to('.services-left', {
     opacity: 1,
     duration: 0.4,
     ease: 'power1.inOut',
 });
-servicesFadeTimeline.to('.services-right-item.item-1', {
-    opacity: 1,
-    duration: 0.4,
-    ease: 'power1.inOut',
-}, '+=0.3'); // 0.3s delay after left content
-servicesFadeTimeline.to('.services-right-item.item-2', {
-    opacity: 1,
-    duration: 0.4,
-    ease: 'power1.inOut',
-}, '+=0.2'); // 0.2s delay after item-1
-servicesFadeTimeline.to('.services-right-item.item-3', {
-    opacity: 1,
-    duration: 0.4,
-    ease: 'power1.inOut',
-}, '+=0.2'); // 0.2s delay after item-2
+
+
 
 
 

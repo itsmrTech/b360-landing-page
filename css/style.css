@@ -103,18 +103,19 @@ main {
     opacity: 0;
 }
 
-/* Individual service items start hidden */
-.services-right-item {
+/* Service titles start hidden for fade-in animation */
+.services-right-item-content h2 {
     opacity: 0;
 }
 
-/* Ensure service titles are always visible */
-.services-right-item-content {
-    opacity: 1 !important;
+/* Service paragraphs start hidden for fade-in animation */
+.item-1 .services-right-item-content p {
+    opacity: 0;
 }
 
-.services-right-item-content h2 {
-    opacity: 1 !important;
+/* Service images start hidden for fade-in animation */
+.services-image.item-1 {
+    opacity: 0;
 }
 
 /* Start Header */
@@ -502,18 +503,18 @@ header {
     .services-right-item.active .services-right-item-content {
         opacity: 1;
         p {
-            opacity: 1;
+            opacity: 0;
         }
     }
     .services-right-item-content {
-        opacity: 1 !important;
+        opacity: 1;
         p {
             opacity: 0;
         }
     }
     
     .services-right-item-content h2 {
-        opacity: 1 !important;
+        opacity: 0;
     }
     
     .services-right {
