@@ -391,6 +391,11 @@ navbarTimeline.to('.logo', {
     duration: 1,
     ease: 'power1.inOut',
 });
+navbarTimeline.to('.logo-desc', {
+    marginTop:-6,
+    duration: 1,
+    ease: 'power1.inOut',
+},'<');
 navbarTimeline.to('.hamburger', {
     scale: 0.7,
     duration: 1,
