@@ -401,11 +401,7 @@ navbarTimeline.to('.logo', {
     duration: 1,
     ease: 'power1.inOut',
 });
-navbarTimeline.to('.right-nav', {
-    marginRight: 40,
-    duration: 0.5,
-    ease: 'power1.inOut',
-}, '<');
+
 navbarTimeline.to('.right-nav', {
     marginTop:-70,
     duration: 0.5,

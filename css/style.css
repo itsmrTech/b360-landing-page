@@ -358,6 +358,11 @@ header {
 
 }
 
+.right-nav {
+    margin-right:40px;
+    margin-top:-40px;
+}
+
 /* End Slider */
 
 
