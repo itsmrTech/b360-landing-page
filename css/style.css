@@ -486,8 +486,8 @@ header {
     .services-right {
         display: flex;
         flex-direction: row;
-        gap: 2%;
         justify-content: space-between;
+        width: 80%;
     }
     .services-right > div {
         width: 30%;
@@ -510,6 +510,7 @@ header {
     }
     .services-right-item-content {
         opacity: 1;
+        margin-left: 50px;
         p {
             opacity: 0;
         }
@@ -519,9 +520,7 @@ header {
         opacity: 0;
     }
     
-    .services-right {
-        width: 70%;
-    }
+
 }
 
 .hero {
@@ -574,6 +573,9 @@ header {
     mask-size: 100% 100%;
     mask-repeat: no-repeat;
     filter: brightness(0.6) contrast(1.2);
+}
+.services-image.item-2 {
+    left:120px;
 }
 .services-image.item-1 {
     left:-20px;
