@@ -382,7 +382,7 @@ const navbarTimeline = gsap.timeline({
         start: 'top top',
         end: 'top -100%',
         scrub: 1,
-        markers: true,
+        markers: false,
     }
 });
 
@@ -430,7 +430,7 @@ const navbarPortfolioTimeline = gsap.timeline({
         start: 'top 0%',
         end: 'top -10%',
         scrub: 1,
-        markers: {startColor: "blue", endColor: "blue"},
+        markers: false,
     }
 });
 
@@ -468,7 +468,7 @@ const whyUsTimeline = gsap.timeline({
         end: 'bottom -200%',
         scrub: 1,
         pin: true,
-        markers: true,
+        markers: false,
     }
 });
 whyUsTimeline.from('.why-us-img-1', {
@@ -567,7 +567,7 @@ const portfolioTimeline = gsap.timeline({
         end: 'bottom top',
         scrub: 1,
         pin: true,
-        markers: true,
+        markers: false,
 
     }
 });
@@ -605,7 +605,7 @@ const panel4Timeline = gsap.timeline({
         end: 'bottom top',
         scrub: 1,
         pin: true,
-        markers: true,
+        markers: false,
     }
 });
 
@@ -616,7 +616,7 @@ const servicesTimeline = gsap.timeline({
         end: 'bottom top',
         scrub: 1,
         pin: true,
-        markers: true,
+        markers: false,
     }
 });
 

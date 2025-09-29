@@ -334,6 +334,9 @@ header {
 
     .slider-img {
         padding: 0 150px;
+        position: relative;
+        display: flex;
+        justify-content: center;
     }
 
     .logo-shape img {
