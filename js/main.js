@@ -407,7 +407,7 @@ navbarTimeline.to('.right-nav', {
     ease: 'power1.inOut',
 }, '<');
 navbarTimeline.to('.right-nav', {
-    marginTop:-50,
+    marginTop:-70,
     duration: 0.5,
     ease: 'power1.inOut',
 });
