@@ -30,7 +30,7 @@ function endLoadingAnimationHandler(){
 // اینجا دیگه انیشمیشن لودینگ تموم میشه و باقی صفحه رو باز میزاریم
 
 function showMainTextLoading(){
-    const mainTextLoading = document.querySelector('#main-text-loading');
+    const mainTextLoading = document.querySelector('.main-loading-text');
     if(mainTextLoading){
         setTimeout(() => {
             mainTextLoading.classList.add('active');

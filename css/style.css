@@ -742,11 +742,13 @@ header {
     .loading-text-box {
         opacity: 0;
         padding: 12px;
-        width: 9.09%;
+        
+        width: 10%;
         transition: .2s;
         img {
             width: 100%;
-            height: 100%;
+            /* padding-bottom: 12px; */
+        /* padding-top: 12px; */
         }
     }
 
@@ -755,24 +757,22 @@ header {
     }
 
     .main-loading-text {
-        color: #ababab;
-        font-size: 6vw;
-        justify-content: center;
-        white-space: nowrap;
-        text-align: center;
-        font-weight: 900;
-        padding: 0 0.2em;
+        width: 100%;
         opacity: 0;
-        transition: .4s;
-        font-family: 'Basica';
-
-
+        color: #ABABAB;
+        padding-left:12px;
+        padding-right:12px;
+        transition: .3s;
     }
 
     .main-loading-text.active {
-        opacity: 1;
+        opacity: 0.35;
+
     }
 
+}
+
+.loading-wrapper {
 }
 
 .loading-wrapper > div {
@@ -780,7 +780,7 @@ header {
 
 }
 .loading-wrapper > div > div {
-    height: 13.5vh;
+    /* height: 13.5vh; */
 }
 
 .main-loading-text {
