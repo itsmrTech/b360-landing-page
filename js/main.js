@@ -782,8 +782,8 @@ whyUsFadeTimeline.to('.logo-text-box', {
 const servicesFadeTimeline = gsap.timeline({
     scrollTrigger: {
         trigger: '.services-section',
-        start: 'top 40%',
-        end: 'top 0%',
+        start: 'top 60%',
+        end: 'top 20%',
         scrub: 1,
     }
 });
