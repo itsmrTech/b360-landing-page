@@ -152,8 +152,9 @@ header {
         width: 100%;
 
         p {
+            font-family: 'HelveticaNeue';
             color: #fff;
-            font-weight: 200;
+            font-weight: 400;
             font-size: 1.2vw;
             margin: 1.2em 0;
             white-space: nowrap;
