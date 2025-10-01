@@ -392,7 +392,7 @@ navbarTimeline.to('.logo', {
     ease: 'power1.inOut',
 });
 navbarTimeline.to('.logo-desc', {
-    marginTop:-6,
+    marginTop:0,
     duration: 1,
     ease: 'power1.inOut',
 },'<');

@@ -25,8 +25,8 @@ main {
 }
 
 .logo-desc {
-    font-size: 38px;
-    margin-top:-12px;
+    font-size: 24px;
+    margin-top:-6px;
 }
 
 .logo-text-box {
@@ -80,10 +80,13 @@ main {
         mask-repeat: no-repeat;
 
         p {
-            font-size: 0.8vw;
+            font-size: 20px;
+            line-height: 24px;
         }
         .bold-text {
-            font-size: 1.2vw;
+            font-size: 25px;
+            line-height: 30px;
+            margin-bottom: 35px;
         }
     }
 
@@ -348,11 +351,14 @@ header {
 
     .slider-content {
         .slider-title {
-            font-size: 2vw;
+            font-size: 34px;
+            line-height: 40px;
         }
         .slider-content-text-box {
             p {
-                font-size: 1vw;
+                margin-bottom: 0px;
+    line-height: 34px;
+
             }
         }
     }
@@ -460,10 +466,7 @@ header {
 
 .footer-items-box.part-one {
     .bold-text {
-        font-size: 1.7vw;
-    }
-    .light-text {
-        font-size: 1.1vw;
+        font-size: 29px;
     }
 }
 
