@@ -408,7 +408,7 @@ header {
 
 .footer-slider-box {
     width: 100%;
-    height: calc(100% - 100px);
+    height: calc(100% - 140px);
 
     img {
         width: 100%;
@@ -706,26 +706,28 @@ header {
     }
 
     .footer-box-title {
-        font-size: 1.7vw;
+        font-size: 36px;
+        font-weight: 800;
+        margin:0;
     }
 
     .footer-box-title:nth-child(2) {
-        font-size: 1.3vw
+        font-size: 24px;
     }
 
     .footer-box-title:nth-child(3) {
-        font-size: 1vw;
+        font-size: 18px;
         font-weight: 400;
-        color: #bdbdbd;
+        color: #fff;
     }
 
 }
 
 .footer-slider-description {
     background: #000;
-    padding: 30px;
+    padding: 50px 30px;
     display: flex;
-    height: 100px;
+    height: 140px;
     align-items: center;
     justify-content: space-between;
 }

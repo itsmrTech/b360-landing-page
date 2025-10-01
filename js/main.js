@@ -1,4 +1,14 @@
 
+// Scroll to top when page loads
+window.addEventListener('load', () => {
+    window.scrollTo(0, 0);
+});
+
+// Also scroll to top immediately when DOM is ready
+document.addEventListener('DOMContentLoaded', () => {
+    window.scrollTo(0, 0);
+});
+
 // Loading start
 const loadingItems = document.querySelectorAll('.loading-text-box');
 const loadingWrapper = document.querySelector('.loading-wrapper');
@@ -585,11 +595,19 @@ console.log('portfolioTotalWidth', portfolioTotalWidth)
 console.log('portfolioSlideWidth', portfolioSlideWidth)
 console.log('portfolioSlides', portfolioSlides.length)
 
-portfolioTimeline.to('.portfolio-slider-wrapper', {
-    x: -portfolioTotalWidth + portfolioSlideWidth,
-    duration: 200,
-    ease: 'power1.inOut',
-},'1');
+// Create individual slide transitions with pauses between each
+portfolioSlides.forEach((slide, index) => {
+    const slidePosition = -portfolioSlideWidth * index;
+    const slideDuration = 1.0; // Duration for each slide transition - made super slow
+    const pauseDuration = 2.0; // Pause between slides - also increased
+    const startTime = 1 + (index * (slideDuration + pauseDuration));
+    
+    portfolioTimeline.to('.portfolio-slider-wrapper', {
+        x: slidePosition,
+        duration: slideDuration,
+        ease: 'power1.inOut',
+    }, startTime);
+});
 
 portfolioTimeline.to('.portfolio-nav-title', {
     opacity: 0,
