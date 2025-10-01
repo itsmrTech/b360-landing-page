@@ -124,7 +124,7 @@ main {
 /* Start Header */
 
 header {
-    background: #000;
+    background: #080016;
     padding: 40px;
     height: 100dvh;
 
@@ -158,7 +158,7 @@ header {
             font-family: 'HelveticaNeue';
             color: #fff;
             font-weight: 400;
-            font-size: 1.2vw;
+            font-size: 29px;
             margin: 1.2em 0;
             white-space: nowrap;
         }
@@ -174,6 +174,15 @@ header {
 
     }
 
+    .image-wrapper.item-1 {
+        position: relative;
+        top: 200px;
+    }
+
+    .image-wrapper.item-4 {
+        position: relative;
+        top: 150px;
+    }
     .image-wrapper:nth-child(2) {
         position: relative;
         top: 38px;
@@ -187,7 +196,6 @@ header {
 }
 .navbar {
     padding: 20px;
-    mix-blend-mode: difference;
     position: fixed;
     z-index: 1000;
     width: 100vw;
@@ -879,7 +887,6 @@ header {
     padding: 0;
     margin: 0;
 }
-
 
 .simple-action-button {
     border: 1px solid gray;

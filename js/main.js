@@ -406,6 +406,11 @@ navbarTimeline.to('.logo', {
     duration: 1,
     ease: 'power1.inOut',
 });
+navbarTimeline.to('.navbar', {
+    mixBlendMode: 'difference',
+    duration: 1,
+    ease: 'power1.inOut',
+},'<');
 
 navbarTimeline.to('.right-nav', {
     marginTop:-70,
