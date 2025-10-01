@@ -195,7 +195,9 @@ header {
 
 }
 .navbar {
-    padding: 20px;
+    padding: 58px;
+    padding-left: 53px;
+    padding-right: 53px;
     position: fixed;
     z-index: 1000;
     width: 100vw;

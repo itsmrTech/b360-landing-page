@@ -421,6 +421,13 @@ navbarTimeline.to('.navbar', {
     duration: 1,
     ease: 'power1.inOut',
 },'<');
+navbarTimeline.to('.navbar',{
+    paddingTop:20,
+    paddingBottom:20,
+    duration: 1,
+    ease: 'power1.inOut',
+},'<');
+
 
 navbarTimeline.to('.right-nav', {
     marginTop:-70,
@@ -439,6 +446,12 @@ navbarTimeline.to('.navbar-title', {
     duration: 0.5,
     ease: 'power1.inOut',
 });
+navbarTimeline.to('.navbar',{
+    paddingLeft: 20,
+    paddingRight: 20,
+    duration: 1,
+    ease: 'power1.inOut',
+},'<');
 
 const navbarPortfolioTimeline = gsap.timeline({
     scrollTrigger: {
