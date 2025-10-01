@@ -640,7 +640,7 @@ servicesTimeline.to('.services-right-item.item-1 .services-right-item-content h2
     fontWeight: 200,
     duration: 0.2,
     ease: 'power1.inOut',
-},'<');
+},'1');
 servicesTimeline.to('.services-right-item.item-2 .services-right-item-content h2', {
     fontWeight: 400,
     duration: 0.2,
