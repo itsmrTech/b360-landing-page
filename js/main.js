@@ -580,10 +580,10 @@ const portfolioTimeline = gsap.timeline({
     scrollTrigger: {
         trigger: '.portfolio',
         start: 'top top',
-        end: 'bottom top',
+        end: 'bottom -100%',
         scrub: 1,
         pin: true,
-        markers: false,
+        markers: true,
 
     }
 });
