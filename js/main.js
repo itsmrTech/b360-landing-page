@@ -583,7 +583,7 @@ const portfolioTimeline = gsap.timeline({
         end: 'bottom -100%',
         scrub: 1,
         pin: true,
-        markers: true,
+        markers: false,
 
     }
 });
