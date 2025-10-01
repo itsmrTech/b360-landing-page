@@ -481,19 +481,20 @@ header {
 
 
     .services-wrapper {
-        display: flex;
         flex-direction: row;
         align-items: flex-start;
         color: #fff;
         margin: 50px;
-        gap: 50px;
         justify-content: space-between;
     }
     .services-wrapper  h2 {
         color: #fff;
     }
     .services-left h2 {
-        font-size: 1.8vw;
+        font-size: 34px;
+        line-height: 34px;
+        font-weight: 800;
+        padding-bottom: 35px;
     }
     .services-right {
         display: flex;
@@ -501,10 +502,10 @@ header {
         justify-content: space-between;
         width: 80%;
     }
-    .services-right > div {
-        width: 30%;
+    .services-right-item {
+        /* width: 30%; */
         h2 {
-            font-size: 2.8vw;
+            font-size: 55px;
             font-weight: 200;
             text-transform: uppercase;
             margin-bottom: 100px;
@@ -513,6 +514,9 @@ header {
     }
     .services-right-item  {
         position: relative;
+    }
+    .services-right-item.item-2{
+        padding-left: 4%;
     }
     .services-right-item.active .services-right-item-content {
         opacity: 1;
@@ -525,6 +529,7 @@ header {
         margin-left: 50px;
         p {
             opacity: 0;
+            font-size:20px;
         }
     }
     
@@ -590,10 +595,10 @@ header {
     left:120px;
 }
 .services-image.item-1 {
-    left:-20px;
+    left:10%;
 }
 .services-image.item-3 {
-    left:-20px;
+    left: 10%;
 }
 .services-image.active {
     mask-image: linear-gradient(to bottom, transparent 0%, black 0%);

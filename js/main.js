@@ -582,9 +582,9 @@ console.log('portfolioSlides', portfolioSlides.length)
 
 portfolioTimeline.to('.portfolio-slider-wrapper', {
     x: -portfolioTotalWidth + portfolioSlideWidth,
-    duration: 1,
-    ease: 'none',
-});
+    duration: 200,
+    ease: 'power1.inOut',
+},'1');
 
 portfolioTimeline.to('.portfolio-nav-title', {
     opacity: 0,
