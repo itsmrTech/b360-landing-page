@@ -435,14 +435,14 @@ navbarTimeline.to('.right-nav', {
     ease: 'power1.inOut',
 });
 navbarTimeline.to('.logo', {
-    scale:0.4,
-    y:-30,
+    scale:0.3,
+    y:-46,
     duration: 1,
     ease: 'power1.inOut',
     delay: 1,
 });
 navbarTimeline.to('.navbar-title', {
-    x:-40,
+    x:-60,
     duration: 0.5,
     ease: 'power1.inOut',
 });
