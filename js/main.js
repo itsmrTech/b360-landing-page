@@ -647,7 +647,7 @@ const portfolioTimeline = gsap.timeline({
         end: 'bottom -300%',
         scrub: 1,
         pin: true,
-        markers: true,
+        markers: false,
 
     }
 });
@@ -705,7 +705,7 @@ const servicesTimeline = gsap.timeline({
     scrollTrigger: {
         trigger: '.services-section',
         start: 'top top',
-        end: 'bottom top',
+        end: 'bottom -200%',
         scrub: 1,
         pin: true,
         markers: false,
@@ -714,14 +714,17 @@ const servicesTimeline = gsap.timeline({
 
 servicesTimeline.to('.services-right-item.item-1 .services-right-item-content', {
     opacity: 1,
-    duration: 0.2,
+    duration: 0.5,
     ease: 'power1.inOut',
 });
 servicesTimeline.to('.services-right-item.item-2 .services-right-item-content', {
     opacity: 1,
-    duration: 0.2,
+    duration: 0.5,
     ease: 'power1.inOut',
 },'<');
+servicesTimeline.to('.services-right-item.item-1 .services-right-item-content', {
+    duration:1,
+});
 servicesTimeline.to('.services-right-item.item-1 .services-right-item-content h2', {
     fontWeight: 200,
     duration: 0.2,
@@ -753,7 +756,7 @@ servicesTimeline.to('.services-image.item-2', {
     ease: 'power1.inOut',
 },'<');
 servicesTimeline.to('.services-image.item-2', {
-    duration:0.5
+    duration:1
 });
 servicesTimeline.to('.services-right-item.item-2 .services-right-item-content', {
     opacity: 1,
@@ -797,7 +800,7 @@ servicesTimeline.to('.services-image.item-2', {
 },'<');
 
 servicesTimeline.to('.services-right-item.item-3 .services-right-item-content', {
-duration:0.5
+duration:1
 })
 
 
@@ -875,7 +878,7 @@ const servicesFadeTimeline = gsap.timeline({
     scrollTrigger: {
         trigger: '.services-section',
         start: 'top 60%',
-        end: 'top 20%',
+        end: 'top -50%',
         scrub: 1,
     }
 });
@@ -897,6 +900,9 @@ servicesFadeTimeline.to('.services-right-item.item-3 h2', {
     duration: 0.4,
     ease: 'power1.inOut',
 }, '+=0.2'); // 0.2s delay after item-2
+servicesFadeTimeline.to('.services-right-item.item-1 .services-right-item-content', {
+    duration:1
+});
 servicesFadeTimeline.to('.services-right-item.item-1 p', {
     opacity: 1,
     duration: 0.4,
