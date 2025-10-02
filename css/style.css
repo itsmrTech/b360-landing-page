@@ -1,9 +1,16 @@
 @import "./bootstrap.css";
 @import "./typography.css";
-@import "./swiper.css";
+/* @import "./swiper.css"; */
 
 body {
     background: #000;
+}
+.right-nav {
+    margin-right: 0;
+}
+
+:root {
+    --scrollbar-w: 0px;
 }
 
 
@@ -26,8 +33,12 @@ main {
 
 .logo-desc {
     font-size: 24px;
-    margin-top:-6px;
+    margin-top:0;
+    line-height: 1;
+    display: inline-block;
+    transform: translateY(-0.08em);
 }
+/* Using transform fallback only; advanced cap-height trimming not broadly supported */
 
 .logo-text-box {
     position: relative;
@@ -376,7 +387,6 @@ header {
 }
 
 .right-nav {
-    margin-right:40px;
     margin-top:-40px;
 }
 
@@ -410,7 +420,9 @@ header {
 
 .footer-slider-box {
     width: 100%;
-    height: calc(100% - 140px);
+    /* Use measured footer description height; fallback to 140px */
+    height: calc(100% - var(--footer-desc-h, 140px));
+    flex: 0 0 auto;
 
     img {
         width: 100%;
@@ -705,6 +717,9 @@ header {
 
     .swiper-slide-beta {
         width: 100dvw;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
     }
 
     .footer-box-title {
@@ -783,6 +798,14 @@ header {
     flex-direction: column;
 }
 
+/* Align top edges of logo and text */
+.logo-text-wrapper {
+    align-items: flex-start;
+}
+.logo-text-wrapper svg {
+    display: block;
+}
+
 .loading-wrapper
 {
     height: 100dvh;
@@ -837,16 +860,13 @@ header {
 
 }
 
-.loading-wrapper {
-}
+/* removed empty .loading-wrapper ruleset */
 
 .loading-wrapper > div {
     display: flex;
 
 }
-.loading-wrapper > div > div {
-    /* height: 13.5vh; */
-}
+/* removed empty .loading-wrapper > div > div ruleset */
 
 .main-loading-text {
     height: 19vh;
@@ -972,6 +992,7 @@ margin-top: 100px;
         margin-top:-6px;
 }
 .section-name span {
+    width: max-content;
     position: absolute;
     top: 0px;
     right: 0;

@@ -168,12 +168,19 @@
         }
 
         .logo-description {
+            /* reduce padding to create more usable content area inside the frame */
+            padding: 12% 8% !important;
+            width: 85% !important;
+            height: 85% !important;
             p {
                 margin: 0 !important;
                 font-size: 10px;
+                line-height: 14px;
             }
             p.bold-text {
                 font-size: 12px !important;
+                line-height: 16px;
+                margin-bottom: 6px !important;
             }
         }
 
@@ -261,4 +268,193 @@
     }
 
 
+    /* Match right nav titles to headline scale on mobile */
+    .section-name span {
+        font-weight: 800 !important;
+        font-size: 12px !important;
+        color: #fff !important;
+    }
+}
+
+/* Small-to-medium desktops below 1024px still get fluid logo */
+@media (min-width: 768px) and (max-width: 1023px) {
+    .logo-desktop svg {
+        width: clamp(100px, 11vw, 150px);
+        height: clamp(86px, 9vw, 120px);
+    }
+
+    /* Match right nav titles to headline scale on tablets/small laptops */
+    .section-name span {
+        font-weight: 800 !important;
+        font-size: clamp(12px, 2.1vw, 22px) !important;
+        color: #fff !important;
+    }
+}
+
+@media (min-width: 1024px) {
+    /* Fluid desktop scaling from small laptops up to large desktops */
+    body {
+        font-size: clamp(16px, 1.5vw, 29px);
+    }
+
+    header {
+        padding: clamp(16px, 2.1vw, 40px) !important;
+    }
+
+    .navbar {
+        /* Keep initial padding aligned with hero imagery; top/bottom static */
+        padding-top: 58px;
+        padding-bottom: 58px;
+        padding-left: clamp(16px, 3vw, 60px) ;
+        padding-right: calc(clamp(16px, 3vw, 60px) + var(--scrollbar-w));
+    }
+
+    .header-content {
+        padding-top: clamp(60px, 9.4vw, 180px) !important;
+    }
+
+    .logo-text {
+        font-size: clamp(36px, 3.5vw, 68px) !important;
+        line-height: clamp(28px, 2.7vw, 52px) !important;
+    }
+
+    .logo-desc {
+        font-size: clamp(12px, 1.2vw, 24px) !important;
+    }
+
+    .header-content .image-wrapper p {
+        font-size: clamp(14px, 1.5vw, 29px) !important;
+    }
+
+    .header-content .image-wrapper img {
+        width: clamp(55%, 70%, 80%);
+        height: auto;
+    }
+
+    .slider-wrapper .slider-content .slider-title {
+        font-size: clamp(18px, 1.8vw, 34px) !important;
+        line-height: clamp(22px, 2.1vw, 40px) !important;
+    }
+
+    .slider-wrapper .slider-content .slider-content-text-box p {
+        font-size: clamp(14px, 1.4vw, 20px) !important;
+        line-height: clamp(20px, 1.8vw, 34px) !important;
+    }
+
+    .slider-wrapper .slider-img {
+        padding: 0 clamp(20px, 7.8vw, 150px) !important;
+    }
+
+    .slider-wrapper {
+        padding: clamp(12px, 2.1vw, 40px) !important;
+    }
+
+    .why-us-img-wrapper img {
+        width: clamp(380px, 36vw, 700px) !important;
+        height: clamp(380px, 36vw, 700px) !important;
+    }
+
+    .services-section .services-left h2 {
+        font-size: clamp(22px, 1.8vw, 34px) !important;
+        line-height: clamp(22px, 1.8vw, 34px) !important;
+    }
+
+    .services-section .services-right-item h2 {
+        font-size: clamp(28px, 2.9vw, 55px) !important;
+        margin-bottom: clamp(30px, 5vw, 100px) !important;
+    }
+
+    .services-section .services-right-item-content p {
+        font-size: clamp(14px, 1.1vw, 20px) !important;
+        line-height: clamp(18px, 1.6vw, 30px) !important;
+    }
+
+    .footer-portfolio-slider .footer-box-title {
+        font-size: clamp(16px, 1.9vw, 36px) !important;
+    }
+
+    .footer-portfolio-slider .footer-box-title:nth-child(2) {
+        font-size: clamp(14px, 1.25vw, 24px) !important;
+    }
+
+    .footer-portfolio-slider .footer-box-title:nth-child(3) {
+        font-size: clamp(12px, 0.95vw, 18px) !important;
+    }
+
+    .contact-form-wrapper {
+        font-size: clamp(14px, 1.2vw, 24px) !important;
+    }
+
+    .contact-form-wrapper .bold-text {
+        font-size: clamp(20px, 2.2vw, 42px) !important;
+    }
+
+    .footer-slider-description {
+        height: clamp(100px, 8vw, 140px) !important;
+        padding: clamp(20px, 2.4vw, 50px) clamp(12px, 1.6vw, 30px) !important;
+    }
+
+    .footer-content-slider-box > div {
+        padding: clamp(16px, 2.6vw, 50px) !important;
+    }
+
+    .copy-right-text {
+        font-size: clamp(12px, 1vw, 18px) !important;
+    }
+
+    .footer-link-item {
+        font-size: clamp(12px, 1vw, 18px) !important;
+        line-height: clamp(18px, 1.1vw, 24px) !important;
+    }
+
+    .menu-wrapper a {
+        font-size: clamp(14px, 1.2vw, 22px) !important;
+    }
+
+    .slider-footer-text span {
+        font-size: clamp(10px, 1.2vw, 22px) !important;
+    }
+
+    .footer-img-text p {
+        font-size: clamp(22px, 3.2vw, 5vw) !important;
+        line-height: clamp(28px, 5vw, 8vw) !important;
+        left: clamp(16px, 3.6vw, 70px) !important;
+        top: clamp(20px, 2.6vw, 50px) !important;
+        padding-right: clamp(12px, 1.6vw, 30px) !important;
+        word-spacing: clamp(8px, 2.6vw, 50px) !important;
+    }
+
+    /* Navbar logo fluid sizing based on 1950px baseline (175x150) */
+    .logo-desktop svg {
+        width: clamp(110px, 9vw, 175px);
+        height: clamp(95px, 7.7vw, 150px);
+    }
+
+    /* Match right nav title styling with "Crafted Spaces..." headline */
+    .section-name span {
+        font-weight: 800 !important; /* same as .bold-text */
+        font-size: clamp(14px, 1.5vw, 28px) !important; /* aligns with .portfolio-header-text 1.5vw */
+        color: #fff !important;
+    }
+}
+
+/* Fine-tune right-side badge text around laptop widths to prevent clipping */
+@media (min-width: 1200px) and (max-width: 1400px) {
+    /* Reduce inner text sizes inside the logo badge so longer titles fit */
+    .whyUsSlider .logo-description p {
+        font-size: 16px;
+        line-height: 22px;
+    }
+
+    .whyUsSlider .logo-description p.bold-text {
+        font-size: 20px;
+        line-height: 26px;
+        margin-bottom: 10px;
+    }
+
+    .whyUsSlider .logo-description {
+        padding: 16% 10%;
+        height: 85%;
+        width: 82%;
+    }
 }

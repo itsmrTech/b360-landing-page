@@ -78,6 +78,49 @@ menuButton.addEventListener('click' , () => {
 
 const viewportHeight = Math.max(document.documentElement.clientHeight, window.innerHeight || 0);
 const viewportWidth = Math.max(document.documentElement.clientWidth, window.innerWidth || 0);
+// Responsive unit helpers based on 1950px design baseline
+const BASE_WIDTH = 1950;
+const pxToVw = (px) => `${(px / BASE_WIDTH) * 100}vw`;
+// Utility: convert a pixel value from the 1950px baseline to actual device pixels
+const basePxToDevicePx = (px) => (window.innerWidth * px) / BASE_WIDTH;
+function getNavbarShrinkPaddingRightPx(){
+    const nav = document.querySelector('.navbar');
+    if(!nav){
+        return Math.max(24, basePxToDevicePx(40));
+    }
+    const current = parseFloat(getComputedStyle(nav).paddingRight) || 0;
+    const desired = Math.max(24, basePxToDevicePx(40));
+    // Ensure target is strictly less than current padding-right
+    const target = Math.min(current - 1, desired);
+    return Math.max(12, target);
+}
+
+// Cache baseline logo svg sizes so animations use width/height instead of scale
+function cacheLogoBaseSize(){
+    const svgs = [
+        document.querySelector('.logo-desktop svg'),
+        document.querySelector('.logo-mobile svg')
+    ].filter(Boolean);
+    svgs.forEach(svg => {
+        const rect = svg.getBoundingClientRect();
+        svg.dataset.baseW = String(rect.width);
+        svg.dataset.baseH = String(rect.height);
+    });
+}
+// Initialize cached sizes
+cacheLogoBaseSize();
+// Re-cache on ScrollTrigger refresh (e.g., resize)
+if (window.ScrollTrigger) {
+    ScrollTrigger.addEventListener('refreshInit', cacheLogoBaseSize);
+}
+
+// Calculate and set scrollbar width as CSS variable for balanced navbar padding
+function setScrollbarWidthVar(){
+    const scrollBarWidth = window.innerWidth - document.documentElement.clientWidth;
+    document.documentElement.style.setProperty('--scrollbar-w', `${scrollBarWidth}px`);
+}
+setScrollbarWidthVar();
+window.addEventListener('resize', setScrollbarWidthVar);
 gsap.registerPlugin(ScrollTrigger,ScrollSmoother);
 const smoother = ScrollSmoother.create({
     smooth: 1, // how long (in seconds) it takes to "catch up" to the native scroll position
@@ -396,59 +439,67 @@ const navbarTimeline = gsap.timeline({
     }
 });
 
-navbarTimeline.to('.logo', {
-    scale: 0.7,
+// Animate logo via width/height (not scale)
+navbarTimeline.to('.logo svg', {
+    width: pxToVw(122.5), // 175 * 0.7
+    height: pxToVw(105),  // 150 * 0.7
     duration: 1,
     ease: 'power1.inOut',
 });
-navbarTimeline.to('.logo-desc', {
-    marginTop:0,
-    duration: 1,
-    ease: 'power1.inOut',
-},'<');
-navbarTimeline.to('.hamburger', {
-    scale: 0.7,
+// Hamburger: animate line sizes instead of scaling container
+navbarTimeline.to('.hamburger .line', {
+    width: pxToVw(87.75), // 4.5vw of 1950 = 87.75px (baseline)
+    height: pxToVw(9.75), // 0.5vw of 1950 = 9.75px
+    duration: 0,
+});
+navbarTimeline.to('.hamburger .line', {
+    width: pxToVw(61.425), // 70% of baseline
+    height: pxToVw(6.825),
     duration: 1,
     ease: 'power1.inOut',
 }, '<');
-navbarTimeline.to('.logo', {
-    y: -20,
-    duration: 1,
-    ease: 'power1.inOut',
-});
+// Removed vertical logo/desc shifts; size-based scaling keeps alignment
 navbarTimeline.to('.navbar', {
     mixBlendMode: 'difference',
     duration: 1,
     ease: 'power1.inOut',
 },'<');
 navbarTimeline.to('.navbar',{
-    paddingTop:20,
-    paddingBottom:20,
+    paddingTop: 32,
+    paddingBottom: 32,
     duration: 1,
     ease: 'power1.inOut',
 },'<');
 
 
-navbarTimeline.to('.right-nav', {
-    marginTop:-100,
-    duration: 0.5,
-    ease: 'power1.inOut',
-});
-navbarTimeline.to('.logo', {
-    scale:0.3,
-    y:-46,
+// Remove vertical shift of right nav
+navbarTimeline.to('.logo svg', {
+    width: pxToVw(52.5), // 175 * 0.3
+    height: pxToVw(45),  // 150 * 0.3
     duration: 1,
     ease: 'power1.inOut',
     delay: 1,
 });
+navbarTimeline.to('.right-nav', {
+    marginTop: 0,
+    duration: 1,
+    ease: 'power1.inOut',
+},'<');
+// navbarTimeline.to('.logo-desc', {
+//     marginTop:`-=${pxToVw(20)}`,
+//     duration: 1,
+//     ease: 'power1.inOut',
+// },'<');
 navbarTimeline.to('.navbar-title', {
-    x:-60,
+    marginLeft:0,
     duration: 0.5,
     ease: 'power1.inOut',
 });
+// Keep a sensible minimum padding in px for very small widths
 navbarTimeline.to('.navbar',{
-    paddingLeft: 20,
-    paddingRight: 20,
+    paddingLeft: `max(24px, ${pxToVw(40)})`,
+    // Ensure animated padding-right never exceeds current value
+    paddingRight: () => `${getNavbarShrinkPaddingRightPx()}px`,
     duration: 1,
     ease: 'power1.inOut',
 },'<');
@@ -464,7 +515,7 @@ const navbarPortfolioTimeline = gsap.timeline({
 });
 
 navbarPortfolioTimeline.to('.logo-desc', {
-    y:-60,
+    y:`-=${pxToVw(160)}`,
     duration: 0.5,
     ease: 'power1.inOut',
 });
@@ -472,20 +523,20 @@ navbarPortfolioTimeline.to('.logo-desc', {
 navbarPortfolioTimeline.to('.portfolio-header-text', {
     opacity: 1,
     display: 'block',
-    y:0,
+    y:`-${pxToVw(8)}`,
 
     duration: 0.7,
     ease: 'power1.inOut',
 },'<');
 navbarPortfolioTimeline.to('.why-us-nav-title', {
     opacity: 0,
-    top: -40,
+    top: `-=${pxToVw(40)}`,
     duration: 0.2,
     ease: 'power1.inOut',
 },'<');
 navbarPortfolioTimeline.to('.portfolio-nav-title', {
     opacity: 1,
-    top: -20,
+    top: `-=${pxToVw(20)}`,
     duration: 0.2,
     ease: 'power1.inOut',
 },'<');
@@ -509,7 +560,7 @@ whyUsTimeline.from('.why-us-img-1', {
 
 whyUsTimeline.to('.why-us-nav-title', {
     opacity: 1,
-    top: -20,
+    top: `-=${pxToVw(20)}`,
     duration: 0.02,
     ease: 'power1.inOut',
 },'<');
@@ -624,7 +675,7 @@ portfolioSlides.forEach((slide, index) => {
 
 portfolioTimeline.to('.portfolio-nav-title', {
     opacity: 0,
-    top: -40,
+    top: `-=${pxToVw(40)}`,
     duration: 0.2,
     ease: 'power1.inOut',
 });
@@ -756,13 +807,13 @@ const navbarContactTimeline = gsap.timeline({
 });
 navbarContactTimeline.to('.portfolio-nav-title', {
     opacity: 0,
-    top: -40,
+    top: `-=${pxToVw(40)}`,
     duration: 0.2,
     ease: 'power1.inOut',
 });
 navbarContactTimeline.to('.contact-nav-title', {
     opacity: 1,
-    top: -20,
+    top: `-=${pxToVw(20)}`,
     duration: 0.2,
     ease: 'power1.inOut',
 },'<');
@@ -867,6 +918,22 @@ servicesFadeTimeline.to('.services-left', {
 // else
 //     setTimeout(allGsapAnimationHandlerMobile , 3700)
 
+
+// Dynamically measure footer description height and expose as CSS variable
+function setFooterDescriptionHeightVar(){
+    const description = document.querySelector('.footer-slider-description');
+    const root = document.documentElement;
+    if(description){
+        const h = description.getBoundingClientRect().height;
+        root.style.setProperty('--footer-desc-h', `${h}px`);
+    }
+}
+// Initial set and on resize/ScrollTrigger refresh
+setFooterDescriptionHeightVar();
+window.addEventListener('resize', setFooterDescriptionHeightVar);
+if (window.ScrollTrigger) {
+    ScrollTrigger.addEventListener('refresh', setFooterDescriptionHeightVar);
+}
 
 /*
 
