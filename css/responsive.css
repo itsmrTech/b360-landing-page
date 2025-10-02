@@ -458,3 +458,24 @@
         width: 82%;
     }
 }
+
+/* Prevent text cropping on larger laptop widths (e.g., ~1425px) */
+@media (min-width: 1401px) and (max-width: 1750px) {
+    .whyUsSlider .logo-description {
+        padding: 15% 10% !important; /* create more usable space inside the frame */
+        height: 86% !important;
+        width: 84% !important;
+    }
+
+    .whyUsSlider .logo-description p {
+        font-size: 18px !important;
+        line-height: 24px !important;
+        margin-bottom: 0 !important;
+    }
+
+    .whyUsSlider .logo-description p.bold-text {
+        font-size: 22px !important;
+        line-height: 28px !important;
+        margin-bottom: 12px !important;
+    }
+}
