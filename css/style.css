@@ -218,6 +218,10 @@ header {
     
 }
 
+.menu-open .line {
+    background: #000;
+}
+
 
 .menu-wrapper {
     position: fixed;
@@ -239,7 +243,7 @@ header {
         align-items: flex-end;
         padding: 45px;
         .line {
-            background: #000;
+            background: #fff;
         }
     }
 

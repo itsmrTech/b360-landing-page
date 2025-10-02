@@ -70,7 +70,9 @@ const menuButton = document.querySelector('#menu-button');
 
 
 menuButton.addEventListener('click' , () => {
-    menuWrapper.classList.toggle('active')
+    menuWrapper.classList.toggle('active');
+    menuButton.classList.toggle('menu-open');
+    
 })
 
 
@@ -446,6 +448,7 @@ navbarTimeline.to('.logo svg', {
     duration: 1,
     ease: 'power1.inOut',
 });
+
 // Hamburger: animate line sizes instead of scaling container
 navbarTimeline.to('.hamburger .line', {
     width: pxToVw(87.75), // 4.5vw of 1950 = 87.75px (baseline)
@@ -463,6 +466,9 @@ navbarTimeline.to('.navbar', {
     mixBlendMode: 'difference',
     duration: 1,
     ease: 'power1.inOut',
+},'<');
+navbarTimeline.set('.hamburger .line', {
+    background: '#fff',
 },'<');
 navbarTimeline.to('.navbar',{
     paddingTop: 32,
