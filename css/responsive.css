@@ -168,10 +168,10 @@
         }
 
         .logo-description {
-            /* reduce padding to create more usable content area inside the frame */
-            padding: 12% 8% !important;
-            width: 85% !important;
-            height: 85% !important;
+            /* keep inner content off the edges on small screens */
+            padding: clamp(14%, 8vw, 18%) clamp(10%, 6vw, 14%) !important;
+            width: 82% !important;
+            height: 82% !important;
             p {
                 margin: 0 !important;
                 font-size: 10px;
@@ -459,10 +459,39 @@
     }
 }
 
+/* Improve badge at ~tablet/laptop widths (e.g., 1024–1152–1199px) */
+@media (min-width: 993px) and (max-width: 1199px) {
+    /* Make the outer frame a touch larger */
+    .whyUsSlider .logo-shape img {
+        max-height: 90%;
+        width: 125%;
+    }
+
+    /* Give more breathing room inside the frame and avoid text cropping */
+    .whyUsSlider .logo-description {
+        margin: 1% 10% !important;
+        height: 88% !important;
+        width: 100% !important;
+    }
+
+    /* Smaller, better-leading text so long words don't clip */
+    .whyUsSlider .logo-description p {
+        font-size: 14px !important;
+        line-height: 20px !important;
+        margin-bottom: 0 !important;
+    }
+
+    .whyUsSlider .logo-description p.bold-text {
+        font-size: 18px !important;
+        line-height: 24px !important;
+        margin-bottom: 8px !important;
+    }
+}
+
 /* Prevent text cropping on larger laptop widths (e.g., ~1425px) */
 @media (min-width: 1401px) and (max-width: 1750px) {
     .whyUsSlider .logo-description {
-        padding: 15% 10% !important; /* create more usable space inside the frame */
+        padding: 18% 12% !important; /* create more usable space inside the frame */
         height: 86% !important;
         width: 84% !important;
     }
