@@ -644,10 +644,10 @@ const portfolioTimeline = gsap.timeline({
     scrollTrigger: {
         trigger: '.portfolio',
         start: 'top top',
-        end: 'bottom -100%',
+        end: 'bottom -300%',
         scrub: 1,
         pin: true,
-        markers: false,
+        markers: true,
 
     }
 });
@@ -662,9 +662,10 @@ console.log('portfolioSlides', portfolioSlides.length)
 // Create individual slide transitions with pauses between each
 portfolioSlides.forEach((slide, index) => {
     const slidePosition = -portfolioSlideWidth * index;
-    const slideDuration = 1.0; // Duration for each slide transition - made super slow
-    const pauseDuration = 2.0; // Pause between slides - also increased
-    const startTime = 1 + (index * (slideDuration + pauseDuration));
+    const slideDuration = 2.0; // Duration for each slide transition - made super slow
+    const pauseDuration = 1.5; // Pause between slides - also increased
+    let startTime = 0.5 + (index * (slideDuration + pauseDuration));
+    if(index==0) startTime=0;
     
     portfolioTimeline.to('.portfolio-slider-wrapper', {
         x: slidePosition,
@@ -672,6 +673,9 @@ portfolioSlides.forEach((slide, index) => {
         ease: 'power1.inOut',
     }, startTime);
 });
+portfolioTimeline.to('.portfolio-slider-wrapper', {
+    duration:1
+},);
 
 portfolioTimeline.to('.portfolio-nav-title', {
     opacity: 0,
