@@ -229,7 +229,7 @@ header {
     width: 0%;
     height: 100dvh;
     background: #fff;
-    z-index: 2;
+    z-index: 2001;
     display: flex;
     flex-direction: column;
     transition: 0.5s;
@@ -265,6 +265,32 @@ header {
 
 .menu-wrapper.active {
     width: 30%;
+}
+
+/* Close button inside the slide-out menu */
+.menu-close-btn {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    left: auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 56px;
+    height: 56px;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+    z-index: 1;
+}
+.menu-close-icon {
+    display: block;
+    width: 44px;
+    height: 44px;
+}
+.menu-close-icon path {
+    stroke-width: 3;
 }
 
 /* End Header */

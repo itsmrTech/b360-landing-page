@@ -228,21 +228,26 @@
     </div>
 <main id="smooth-wrapper">
     <div id="menu-wrapper" class="menu-wrapper">
-        
+        <button id="menu-close" class="menu-close-btn" aria-label="Close menu">
+            <svg class="menu-close-icon" width="28" height="28" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M18 6L6 18" stroke="#000" stroke-width="2" stroke-linecap="round"/>
+                <path d="M6 6L18 18" stroke="#000" stroke-width="2" stroke-linecap="round"/>
+            </svg>
+        </button>
         <div class="menu-content-wrapper">
-            <a href="">
+            <a href="#home">
                 HOME
             </a>
-            <a href="">
+            <a href="#why-us">
                 WHY US
             </a>
-            <a href="">
+            <a href="#portfolio">
                 PORTFOLIO
             </a>
-            <a href="">
+            <a href="#services">
                 SERVICES
             </a>
-            <a href="">
+            <a href="#contact">
                 CONTACT
             </a>
         </div>
@@ -284,7 +289,7 @@
     
     <div class="main-content">
 
-        <header class="fullscreen-section panel-1 hero" style="z-index: 10; position: relative;">
+        <header id="home" class="fullscreen-section panel-1 hero" style="z-index: 10; position: relative;">
             
             <div class="header-content d-flex " >
                     <div class="swiper-wrapper">
@@ -334,7 +339,7 @@
                 </div>
         </header>
 
-        <section class="fullscreen-section panel-2 slider-wrapper why-us-section">
+        <section id="why-us" class="fullscreen-section panel-2 slider-wrapper why-us-section">
 
             <div class="swiper whyUsSlider ">
                 <div class="swiper-wrapper">
@@ -501,7 +506,7 @@ We've thought through, every detail.
             
         </section>
 <section class="portfolio-section">
-        <div class="footer-slider-wrapper fullscreen-section panel-3 relative portfolio">
+        <div id="portfolio" class="footer-slider-wrapper fullscreen-section panel-3 relative portfolio">
             <div class="col-12 flex-wrap d-flex justify-content-between align-items-center  slider-footer-text portfolio-header">
                 
               
@@ -590,7 +595,7 @@ We've thought through, every detail.
             </div>
         </div>
     </section>
-    <section class="services-section fullscreen-section">
+    <section id="services" class="services-section fullscreen-section">
         <div class="services-wrapper d-flex flex-wrap">
             <div class="services-left col-12 col-lg-3" data-speed="0.9">
                 <h2>
@@ -667,7 +672,7 @@ clients budgets and needs. <br />
             </div>
         </div>
     </section>
-        <div class="contact-wrapper fullscreen-section d-flex flex-column  panel-5">
+        <div id="contact" class="contact-wrapper fullscreen-section d-flex flex-column  panel-5">
             <div class="d-flex flex-wrap">
                 
                 <div class="col-12 col-lg-8 contact-form-wrapper">

@@ -67,6 +67,7 @@ if(randomOrder.length){
 // Menu Handler
 const menuWrapper = document.querySelector('#menu-wrapper');
 const menuButton = document.querySelector('#menu-button');
+const menuCloseBtn = document.querySelector('#menu-close');
 
 
 menuButton.addEventListener('click' , () => {
@@ -74,6 +75,46 @@ menuButton.addEventListener('click' , () => {
     menuButton.classList.toggle('menu-open');
     
 })
+// Close button inside menu
+if(menuCloseBtn){
+    menuCloseBtn.addEventListener('click', () => {
+        menuWrapper.classList.remove('active');
+        menuButton.classList.remove('menu-open');
+    });
+}
+
+// Smooth scroll for menu links and auto-close
+const menuLinks = document.querySelectorAll('#menu-wrapper .menu-content-wrapper a[href^="#"]');
+if(menuLinks.length && window.gsap && window.ScrollToPlugin){
+    gsap.registerPlugin(ScrollToPlugin);
+    menuLinks.forEach(link => {
+        link.addEventListener('click', (e) => {
+            const targetId = link.getAttribute('href');
+            if(!targetId || targetId === '#') return;
+            const targetEl = document.querySelector(targetId);
+            if(!targetEl) return;
+            e.preventDefault();
+            const offset = 0; // adjust if sticky navbar overlaps
+            if (window.ScrollSmoother && typeof smoother !== 'undefined' && smoother) {
+                smoother.scrollTo(targetEl, true, offset);
+                setTimeout(() => {
+                    menuWrapper.classList.remove('active');
+                    menuButton.classList.remove('menu-open');
+                }, 50);
+            } else {
+                gsap.to(window, {
+                    duration: 0.8,
+                    scrollTo: { y: targetEl, offsetY: offset, autoKill: true },
+                    ease: 'power2.out',
+                    onComplete: () => {
+                        menuWrapper.classList.remove('active');
+                        menuButton.classList.remove('menu-open');
+                    }
+                });
+            }
+        });
+    });
+}
 
 
 
