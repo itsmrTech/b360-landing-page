@@ -364,6 +364,12 @@
         margin-bottom: clamp(30px, 5vw, 100px) !important;
     }
 
+    /* Match left paragraph font with right-side service paragraphs */
+    .services-section .services-left p {
+        font-size: clamp(14px, 1.1vw, 20px) !important;
+        line-height: clamp(18px, 1.6vw, 30px) !important;
+    }
+
     .services-section .services-right-item-content p {
         font-size: clamp(14px, 1.1vw, 20px) !important;
         line-height: clamp(18px, 1.6vw, 30px) !important;
