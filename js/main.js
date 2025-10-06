@@ -96,7 +96,22 @@ if(menuLinks.length && window.gsap && window.ScrollToPlugin){
             e.preventDefault();
             const offset = 0; // adjust if sticky navbar overlaps
             if (window.ScrollSmoother && typeof smoother !== 'undefined' && smoother) {
-                smoother.scrollTo(targetEl, true, offset);
+                let offsetBySection={
+                    'why-us': 0.4,
+                    'portfolio-slider': 0.1,
+                }
+                // Get current scroll position and add 10% more
+                const targetId = link.getAttribute('href').substring(1); // Remove the '#'
+                const sectionOffset = offsetBySection[targetId] || 0;
+                const targetScroll = smoother.offset(targetEl, "top") + offset;
+                const additionalScroll = targetScroll * sectionOffset;
+                smoother.scrollTo(targetScroll + additionalScroll, true);
+                // Scroll one step after menu close
+                // if (smoother && smoother.scrollTrigger) {
+                //     const currentProgress = smoother.scrollTrigger.progress;
+                //     const nextProgress = Math.min(currentProgress + 0.1, 1);
+                //     smoother.scrollTo(nextProgress, true);
+                // }
                 setTimeout(() => {
                     menuWrapper.classList.remove('active');
                     menuButton.classList.remove('menu-open');
@@ -592,7 +607,7 @@ const whyUsTimeline = gsap.timeline({
     scrollTrigger: {
         trigger: '.whyUsSlider',
         start: 'top top',
-        end: 'bottom -200%',
+        end: 'bottom -300%',
         scrub: 1,
         pin: true,
         markers: false,
@@ -611,11 +626,14 @@ whyUsTimeline.to('.why-us-nav-title', {
     duration: 0.02,
     ease: 'power1.inOut',
 },'<');
+whyUsTimeline.to('.why-us-nav-title', {
+    duration:0.2
+});
 whyUsTimeline.to('.why-us-img-1', {
     'mask-image': 'linear-gradient(to bottom, transparent 100%, black 100%)',
     duration: 0.2,
     ease: 'power1.inOut',
-},'<');
+});
 
 whyUsTimeline.to('.why-us-img-2', {
     'mask-image': 'linear-gradient(to bottom, transparent 0%, black 0%)',
@@ -682,7 +700,7 @@ whyUsTimeline.to('.logo-description-3', {
     ease: 'power1.inOut',
 },'<');
 whyUsTimeline.to('.why-us-img-3', {
-    duration:0.5
+    duration:0.7
 });
 
 
